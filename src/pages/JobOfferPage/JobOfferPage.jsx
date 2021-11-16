@@ -9,6 +9,7 @@ const JobOffers = () => {
     const getJobOffersApi = async () => {
         try {
             const data = await getJobOffers()
+            console.log("data", data)
             setJobOffers(data.data)
             
 
@@ -17,7 +18,7 @@ const JobOffers = () => {
             
         } 
     }
-        console.log(jobOffers)
+       
     useEffect (()=>{
         getJobOffersApi()
     },[])
