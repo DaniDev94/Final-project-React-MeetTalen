@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { postJobOffers } from "../../api/jobOfferApi";
-import { useNavigate } from 'react-router-dom';
- 
+
 const INITIAL_STATE = {
   name: "",
   residents: "",
@@ -10,7 +9,7 @@ const INITIAL_STATE = {
 
 const FormJobOffers = (props) => {
   const [jobOffer, setJobOffer] = useState(INITIAL_STATE);
- const navigate= useNavigate()
+
   const handleInput = (e) => {
     const { name, value } = e.target;
     setJobOffer({ ...jobOffer, [name]: value });
@@ -20,18 +19,15 @@ const FormJobOffers = (props) => {
     e.preventDefault();
     addJoboffer();
   };
- const addJoboffer = async () => {
+  const addJoboffer = async () => {
     try {
-        const newJobOffer = await postJobOffers(jobOffer)
-        if (newJobOffer) {
-           
- /*           navigate('/jobOffers') */
-        }
+      const newJobOffer = await postJobOffers(jobOffer);
+      if (newJobOffer) {
+      }
     } catch (error) {
-        console.error(error)
+      console.error(error);
     }
-}
-
+  };
 
   return (
     <>
@@ -53,17 +49,16 @@ const FormJobOffers = (props) => {
             </label>
             <label>
               <p>Idiomas</p>
-              
+
               <input type="text" placeholder="idiomas" onChange={handleInput} />
             </label>
             <label>
               <p>Sector</p>
-              
+
               <select>
                 <option>Diseño Ux/Ui </option>
                 <option>Desarrollo Web</option>
                 <option>Ciberseguridad</option>
-               
               </select>
             </label>
             <label>
