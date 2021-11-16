@@ -9,7 +9,7 @@ const JobOffers = () => {
     const getJobOffersApi = async () => {
         try {
             const data = await getJobOffers()
-            setJobOffers(data.data)
+            setJobOffers(data)
             
 
         } catch (error) {
