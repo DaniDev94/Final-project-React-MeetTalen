@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { postJobOffers } from "../../api/jobOfferApi";
+import { Link } from 'react-router-dom';
 
 const INITIAL_STATE = {
   name: "",
@@ -31,6 +32,8 @@ const FormJobOffers = (props) => {
 
   return (
     <>
+    
+
       <form onSubmit={submitForm}>
         <fieldset>
           <div>
