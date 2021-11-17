@@ -1,11 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../../../../api/usersApi';
-
 
 
 export default function RegisterPage() {
 
+    const navigate = useNavigate();
 
     const { register, handleSubmit } = useForm();
 
@@ -24,7 +25,7 @@ export default function RegisterPage() {
         try {
             const newUser = await registerUser(user);
             if (newUser) {
-                console.log('aqui navegaremos a login');
+                navigate('/login');
             }
         } catch (err) {
             console.log(err);
