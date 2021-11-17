@@ -5,7 +5,6 @@ import CandidatePage from "./pages/CandidatePage/CandidatePage";
 import Home from "./pages/HomePage/Homepage";
 import FormJobOffers from "./pages/JobOfferPage/FormJobOfferPages";
 import JobOffers from "./pages/JobOfferPage/JobOfferPage";
-import Login from "./pages/LoginPage/LoginPage";
 
 
 
