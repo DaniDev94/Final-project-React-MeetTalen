@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { postJobOffers } from "../../api/jobOfferApi";
 import { Link } from 'react-router-dom';
+import Navbar from "../../components/Navbar/NavbarPage";
 
 const INITIAL_STATE = {
   name: "",
@@ -106,6 +107,7 @@ const FormJobOffers = (props) => {
           <button type="submit">Enviar</button>
         </fieldset>
       </form>
+      <Navbar></Navbar>
     </>
   );
 };
