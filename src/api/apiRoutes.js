@@ -1,4 +1,4 @@
-const BASE_URL = "https://localhost/3000";
+const BASE_URL = "http://localhost/4000";
 const JOBOFFER = `${BASE_URL}/joboffer`;
 const CANDIDATE = `${BASE_URL}/candidates`;
 const USERS = `${BASE_URL}/users`;
