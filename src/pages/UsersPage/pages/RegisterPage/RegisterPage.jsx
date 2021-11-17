@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { registerUser } from '../../../../api/usersApi';
-import { Password } from 'primereact/password';
+
 
 
 export default function RegisterPage() {
 
-
-    const [password, setPassword] = useState();
 
     const { register, handleSubmit } = useForm();
 
@@ -15,7 +13,7 @@ export default function RegisterPage() {
         const formData = new FormData();
         formData.append('name', data.name);
         formData.append('CEO', data.CEO);
-        formData.append('img', data.img[0]);
+        formData.append('image', data.image[0]);
         formData.append('CIF', data.CIF);
         formData.append('email', data.email);
         formData.append('password', data.password);
@@ -46,8 +44,8 @@ export default function RegisterPage() {
                         <input type='text' name='CEO' {...register('CEO')} />
                     </div>
                     <div>
-                        <label htmlFor='CEO_image'>Avatar</label>
-                        <input type='file' name='CEO_image' {...register('image')} />
+                        <label htmlFor='image'>Avatar</label>
+                        <input type='file' name='image' {...register('image')} />
                     </div>
                     <div>
                         <label htmlFor='CIF'>CIF</label>
@@ -59,7 +57,7 @@ export default function RegisterPage() {
                     </div>
                     <div>
                         <label htmlFor='password'>Contraseña</label>
-                        <Password name='password' promptLabel='Por favor, ingrese su contraseña' value={password} {...register('password')} onChange={(e) => setPassword(e.target.value)} />
+                        <input type='password' name='password' {...register('password')} />
                     </div>
                     <div>
                         <input type="checkbox" name="privacity" />
@@ -71,7 +69,7 @@ export default function RegisterPage() {
                 </form>
             </fieldset>
         </div>
-        );
+    );
 }
 
 
