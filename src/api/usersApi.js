@@ -1,15 +1,15 @@
 import axios from "axios";
-import { addToken } from "../utils/jwt";
+// import { addToken } from "../utils/jwt";
 
 //Alojar la la funcion que recoge el token en una constante, pasarla a la autorización de la cabecera y probar en las rutar que queramos securizar --> console.log(accessToken) = token completo con bearer
-const accessToken = addToken();
+// const accessToken = addToken();
 
 const config = {
     headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
-        'Authorization': `token ${accessToken}`
+        // 'Authorization': `token ${accessToken}`
     }
 }
 
