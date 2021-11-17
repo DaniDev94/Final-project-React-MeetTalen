@@ -1,21 +1,15 @@
-
+import UsersPage from './pages/UsersPage/UsersPage';
 import './App.css';
-import Gallery from './pages/GalleryPage/GalleryPage';
-import Home from './pages/HomePage/Homepage';
-import JobOffer from './pages/JobOfferPage/JobOfferPage';
-import Login from './pages/LoginPage/LoginPage';
-import NewLogin from './pages/LoginPage/NewLoginPage';
+import 'primereact/resources/themes/lara-light-indigo/theme.css'    
+import 'primereact/resources/primereact.min.css'                    
+import 'primeicons/primeicons.css'  
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <Home></Home>
-      
-       <Gallery></Gallery>
-       <JobOffer></JobOffer>
-       <Login></Login>
-       <NewLogin></NewLogin>
+        <UsersPage></UsersPage>
       </header>
     </div>
   );
