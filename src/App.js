@@ -1,5 +1,7 @@
 
 import './App.css';
+import Nav from './components/Nav/Nav';
+import Candidate from './pages/CandidatePage/CandidatePage';
 import Gallery from './pages/GalleryPage/GalleryPage';
 import Home from './pages/HomePage/Homepage';
 import JobOffer from './pages/JobOfferPage/JobOfferPage';
@@ -10,12 +12,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <Home></Home>
-      
-       <Gallery></Gallery>
-       <JobOffer></JobOffer>
-       <Login></Login>
-       <NewLogin></NewLogin>
+       {/* <Home></Home> */}
+      {/* <Candidate></Candidate> */}
+       {/* <Gallery></Gallery>
+       <JobOffer></JobOffer> */}
+       {/* <Login></Login>
+       <NewLogin></NewLogin> */}
+       <Nav></Nav>
       </header>
     </div>
   );
