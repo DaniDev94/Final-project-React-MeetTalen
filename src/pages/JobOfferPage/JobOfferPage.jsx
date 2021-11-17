@@ -1,65 +1,51 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { getJobOffers } from "../../api/jobOfferApi";
+import './JobOfferPage.scss'
 
-const JobOffer = () => {
-    
+const JobOffers = () => {
+  const [jobOffers, setJobOffers] = useState([]);
 
-
-
-    const submitForm =  (e) => {
-        e.preventDefault();
-        JobOffer()
+  const getJobOffersApi = async () => {
+    try {
+      const data = await getJobOffers();
+      setJobOffers(data);
+    } catch (error) {
+      console.log(error);
     }
+  };
 
+  useEffect(() => {
+    getJobOffersApi();
+  }, []);
 
-    return(
+  return (
     <>
-       <form onSubmit={submitForm}>
-                <fieldset>
-                <div>
-                <h2>Descripción</h2>
-                    <label>
-                        <p>Oferta</p>
-                        <input type='text' name='name' value= "nombre oferta"  />
-                    </label>
-                    <label>
-                        <p>Ciudad</p>
-                        <input type='text' name='race' value= "city"  />
-                    </label>
-                    <label>
-                        <p>Pais</p>
-                        <input type='text' name='origin' value="country" />
-                    </label>
-                    </div>
-                    <div>
-                    <h2>Condiciones</h2>
-                    <label>
-                        <p>Disponibilidad</p>
-                        <input type='text' name='father' value="Avaliabity"  />
-                    </label>
-                    <label>
-                        <p>Salario</p>
-                        <input type='text' name='father' value="salary" />
-                    </label>
-                    <label>
-                        <p>Jornada</p>
-                        <input type='text' name='father' value="workingDay"  />
-                    </label>
-                    <label>
-                        <p>Contrato</p>
-                        <input type='text' name='father' value="contract"  />
-                    </label>
-                    <label>
-                        <p>Vacantes</p>
-                        <input type='text' name='vacancies' value="contract"  />
-                    </label>
-                    <label>
-                        <p>Idiomas</p>
-                        <input type='text' name='languaje' value="contract"  />
-                    </label>
-                    </div>
-            </fieldset>
-            </form>
+      <h1>Ofertas de trabajo</h1>
+     
+      <div>
+        {jobOffers.map((item) => {
+          console.log(item);
+          return (
+              <div className= "card">
+            <div key={JSON.stringify(item)}>
+              <h2> {item.jobInformation.jobTitle}</h2>
+              <p> Vacantes: {item.jobInformation.vacancyNumbers}</p>
+              {/* <p> Idiomas: {item.jobInformation.languages}</p>
+              <p> Sector: {item.jobInformation.sector}</p>
+              <p> Estudios: {item.jobInformation.training}</p>
+              <p> Descripción : {item.jobInformation.jobDescription}</p>
+              <p> Salario : {item.jobInformation.terms.salary}</p>
+              <p> Horas: {item.jobInformation.terms.workingHours}</p>
+              <p> Tipo de contrato: {item.jobInformation.terms.contract}</p>
+              <button>Crear oferta</button> */}
+            </div>
+            </div>
+            
+          );
+        })}
+      </div>
     </>
-    )
-}
-export default JobOffer
+  );
+};
+
+export default JobOffers;
