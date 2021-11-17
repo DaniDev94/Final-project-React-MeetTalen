@@ -20,33 +20,14 @@ function App() {
           <Route path="joboffer" >
           <Route index element={<JobOffers></JobOffers>}/>
           <Route path="create" element={<FormJobOffers></FormJobOffers>}/>
-          <Route path="#"/>
           </Route>
+          <Route path="#"/>
+          
+          </Route>
+          </Routes>
 
-
-
-
-
-
-
-
-
-
-
-
-
-          <Route path="login" />
-          <Route element={<Login></Login>} />
-          <Route path="register" />
-          <Route element={<NewLogin></NewLogin>} />
-          <Route path="/joboffer" />
-          <Route element={<JobOffers></JobOffers>} />
-          <Route path="joboffer/create" />
-          <Route element={<FormJobOffers></FormJobOffers>} />
-          <Route path="users/login" element={<Login />} />
-        </Route>
-      </Routes>
-      <Navbar></Navbar>
+    
+      
     </div>
   );
 }
