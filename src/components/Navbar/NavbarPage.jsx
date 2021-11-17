@@ -8,8 +8,6 @@ const Navbar = () => {
       <Link to="/candidates">Candidatos</Link>
       <Link to="/joboffer/create">Crear</Link>
       <Link to="/joboffer">Ofertas</Link>
-      
-     
     </div>
   );
 };
