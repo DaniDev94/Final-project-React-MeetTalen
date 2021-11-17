@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import CandidatePage from "./pages/CandidatePage/CandidatePage";
-import Gallery from "./pages/GalleryPage/GalleryPage";
+
 import Home from "./pages/HomePage/Homepage";
 import FormJobOffers from "./pages/JobOfferPage/FormJobOfferPages";
 import JobOffers from "./pages/JobOfferPage/JobOfferPage";
