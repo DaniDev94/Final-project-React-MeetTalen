@@ -1,6 +1,9 @@
-
-import { JOBOFFER } from './apiRoutes';
 import axios from "axios";
+import { JOBOFFER } from './apiRoutes';
+import { addToken } from "../utils/jwt";
+
+
+const accessToken = addToken();
 
 
 const config = {
@@ -8,6 +11,7 @@ const config = {
         "Accept": "application/json",
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
+        'Authorization': accessToken
     }
 }
 /* export const getJobOffers= () => {
@@ -24,12 +28,17 @@ const config = {
 }  */
 export const getJobOffers = async () => {
     try {
-        console.log('entro en la funcion fetch')
         const data = { "user": "6192997c2749fb5610aa239d" }
         const req = await fetch('http://localhost:4000/joboffer', {
             method: "POST",
-            headers: config.headers,
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                'Authorization': accessToken
+            },
             body: JSON.stringify(data)
+            
         })
         const res = await req.json()
         console.log(res)
@@ -43,7 +52,6 @@ export const getJobOffers = async () => {
 
 export const postJobOffers = (jobOffer) => {
     try {
-
         const req = axios.post(JOBOFFER, jobOffer, config)
         return req
     } catch (error) {
