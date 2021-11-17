@@ -7,9 +7,8 @@ import 'primeicons/primeicons.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <UsersPage></UsersPage>
+    <div>
+      <header>
       </header>
     </div>
   );
