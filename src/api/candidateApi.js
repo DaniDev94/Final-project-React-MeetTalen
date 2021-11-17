@@ -11,7 +11,7 @@ const config ={
 } 
 
 
-export const getCandidate= async () => {
+export const getCandidates= async () => {
     try{
         const req = await axios.get(CANDIDATE, config)
         return req
