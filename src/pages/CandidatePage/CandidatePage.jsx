@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { deleteCandidate, getCandidates } from '../../api/candidateApi';
+import Navbar from '../../components/Navbar/NavbarPage';
 
 const Candidate = () => {
 
@@ -10,10 +11,10 @@ const Candidate = () => {
         try {
             const data = await getCandidates();
             console.log(data.data)
-            setCandidate(data.data) 
-            
-            
-            
+            setCandidate(data.data)
+
+
+
         } catch (error) {
             console.error(error)
         }
@@ -41,7 +42,7 @@ const Candidate = () => {
                 {candidate.map(item => {
                     return (
                         <div key={JSON.stringify(item)}>
-                            <img src={item.image}/>
+                            <img src={item.image} />
                             <div>
                                 <p>{item.name.first}</p>
                                 <p>{item.profession}</p>
@@ -50,14 +51,11 @@ const Candidate = () => {
                                 <p>{item.information.age}</p>
                                 <p>{item.information.address.locality}</p>
                             </div>
-
-
-
                         </div>
                     )
                 })}
             </div>
-
+            <Navbar></Navbar>
         </>
     )
 }
