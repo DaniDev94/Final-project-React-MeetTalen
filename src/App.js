@@ -9,21 +9,21 @@ import FormJobOffers from './pages/JobOfferPage/FormJobOfferPages';
 import JobOffers from './pages/JobOfferPage/JobOfferPage';
 import Login from './pages/LoginPage/LoginPage';
 import NewLogin from './pages/LoginPage/NewLoginPage';
-import Candidate from './pages/CandidatePage/CandidatePage'
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <BrowserRouter>
-       <Home></Home>
+      {/* <BrowserRouter>
+       <Home></Home> */}
       <Candidate></Candidate>
-       <Gallery></Gallery>
+       {/* <Gallery></Gallery>
        <JobOffers></JobOffers>
        <FormJobOffers></FormJobOffers>
        <Login></Login>
        <NewLogin></NewLogin>
-       </BrowserRouter>
+       </BrowserRouter> */}
       </header>
     </div>
   );
