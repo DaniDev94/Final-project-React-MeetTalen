@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { getJobOffers } from "../../api/jobOfferApi";
+import Navbar from "../../components/Navbar/NavbarPage";
 import './JobOfferPage.scss'
 
-const JobOffers = () => {
+const JobOffersPage = () => {
   const [jobOffers, setJobOffers] = useState([]);
 
   const getJobOffersApi = async () => {
@@ -21,16 +23,17 @@ const JobOffers = () => {
   return (
     <>
       <h1>Ofertas de trabajo</h1>
-     
+
       <div>
         {jobOffers.map((item) => {
           console.log(item);
           return (
-              <div className= "card">
-            <div key={JSON.stringify(item)}>
-              <h2> {item.jobInformation.jobTitle}</h2>
-              <p> Vacantes: {item.jobInformation.vacancyNumbers}</p>
-              {/* <p> Idiomas: {item.jobInformation.languages}</p>
+            <div className="card">
+              <div key={JSON.stringify(item)}>
+                <Link to={{ pathname: "/joboffer/" + item._id }}>
+                  <h2> {item.jobInformation.jobTitle}</h2>
+                  <p> Vacantes: {item.jobInformation.vacancyNumbers}</p>
+                  {/* <p> Idiomas: {item.jobInformation.languages}</p>
               <p> Sector: {item.jobInformation.sector}</p>
               <p> Estudios: {item.jobInformation.training}</p>
               <p> Descripción : {item.jobInformation.jobDescription}</p>
@@ -38,14 +41,16 @@ const JobOffers = () => {
               <p> Horas: {item.jobInformation.terms.workingHours}</p>
               <p> Tipo de contrato: {item.jobInformation.terms.contract}</p>
               <button>Crear oferta</button> */}
+                </Link>
+              </div>
             </div>
-            </div>
-            
+
           );
         })}
       </div>
+      <Navbar></Navbar>
     </>
   );
 };
 
-export default JobOffers;
+export default JobOffersPage;
