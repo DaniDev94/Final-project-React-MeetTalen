@@ -12,7 +12,14 @@ export default function RegisterPage() {
     const { register, handleSubmit } = useForm();
 
     const submit = (data) => {
-        addUser(data);
+        const formData = new FormData();
+        formData.append('name', data.name);
+        formData.append('CEO', data.CEO);
+        formData.append('img', data.img[0]);
+        formData.append('CIF', data.CIF);
+        formData.append('email', data.email);
+        formData.append('password', data.password);
+        addUser(formData);
     }
 
     const addUser = async (user) => {
@@ -22,7 +29,7 @@ export default function RegisterPage() {
                 console.log('aqui navegaremos a login');
             }
         } catch (err) {
-            console.log(err)
+            console.log(err);
         }
     }
 
@@ -63,7 +70,8 @@ export default function RegisterPage() {
                     </div>
                 </form>
             </fieldset>
-        </div>)
+        </div>
+        );
 }
 
 
