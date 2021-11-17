@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getJobOffers } from "../../api/jobOfferApi";
+import './JobOfferPage.scss'
 
 const JobOffers = () => {
   const [jobOffers, setJobOffers] = useState([]);
@@ -25,17 +26,19 @@ const JobOffers = () => {
         {jobOffers.map((item) => {
           console.log(item);
           return (
+              <div className= "card">
             <div key={JSON.stringify(item)}>
               <h2> {item.jobInformation.jobTitle}</h2>
               <p> Vacantes: {item.jobInformation.vacancyNumbers}</p>
-              <p> Idiomas: {item.jobInformation.languages}</p>
+              {/* <p> Idiomas: {item.jobInformation.languages}</p>
               <p> Sector: {item.jobInformation.sector}</p>
               <p> Estudios: {item.jobInformation.training}</p>
               <p> Descripción : {item.jobInformation.jobDescription}</p>
               <p> Salario : {item.jobInformation.terms.salary}</p>
               <p> Horas: {item.jobInformation.terms.workingHours}</p>
               <p> Tipo de contrato: {item.jobInformation.terms.contract}</p>
-              <button>Crear oferta</button>
+              <button>Crear oferta</button> */}
+            </div>
             </div>
             
           );
