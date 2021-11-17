@@ -17,7 +17,16 @@ const FormJobOffers = (props) => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    postJobOffers();
+    addJoboffer();
+  };
+  const addJoboffer = async () => {
+    try {
+      const newJobOffer = await postJobOffers(jobOffer);
+      if (newJobOffer) {
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -40,29 +49,17 @@ const FormJobOffers = (props) => {
             </label>
             <label>
               <p>Idiomas</p>
-              <select>
-                <option>Español </option>
-                <option>Inglés</option>
-                <option>Alemán</option>
-                <option>Otros</option>
-              </select>
-              <select>
-                <option>Español </option>
-                <option>Inglés</option>
-                <option>Alemán</option>
-                <option>Otros</option>
-              </select>
-              <select>
-                <option>Español </option>
-                <option>Inglés</option>
-                <option>Alemán</option>
-                <option>Otros</option>
-              </select>
-              <input type="text" placeholder="otros" onChange={handleInput} />
+
+              <input type="text" placeholder="idiomas" onChange={handleInput} />
             </label>
             <label>
               <p>Sector</p>
-              <input type="text" placeholder="sector" onChange={handleInput} />
+
+              <select>
+                <option>Diseño Ux/Ui </option>
+                <option>Desarrollo Web</option>
+                <option>Ciberseguridad</option>
+              </select>
             </label>
             <label>
               <p>Estudios</p>
