@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getCandidate, deleteCandidate } from '../../api/candidateApi';
+import { deleteCandidate, getCandidates } from '../../api/candidateApi';
 
 const Candidate = () => {
 
@@ -8,9 +8,9 @@ const Candidate = () => {
     const getCandidateApi = async () => {
         console.log(candidate)
         try {
-            const data = await getCandidate();
-            console.log(data)
-            setCandidate(data) 
+            const data = await getCandidates();
+            console.log(data.data)
+            setCandidate(data.data) 
             
             
             
@@ -41,14 +41,14 @@ const Candidate = () => {
                 {candidate.map(item => {
                     return (
                         <div key={JSON.stringify(item)}>
-                            <img> {item.image}</img>
+                            <img src={item.image}/>
                             <div>
-                                <p>{item.candidates.name}</p>
+                                <p>{item.name.first}</p>
                                 <p>{item.profession}</p>
                             </div>
                             <div>
-                                <p>{item.informatiom.age}</p>
-                                <p>{item.informatiom.address.locality}</p>
+                                <p>{item.information.age}</p>
+                                <p>{item.information.address.locality}</p>
                             </div>
 
 
