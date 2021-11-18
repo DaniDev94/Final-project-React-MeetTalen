@@ -5,13 +5,13 @@ import 'primeicons/primeicons.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import CandidatePage from "./pages/CandidatePage/CandidatePage";
 import Home from "./pages/HomePage/Homepage";
-import FormJobOffers from "./pages/JobOfferPage/pages/FormJobOffer/FormJobOfferPages";
-import LoginPage from "./pages/UsersPage/pages/LoginPage/LoginPage";
-import RegisterPage from "./pages/UsersPage/pages/RegisterPage/RegisterPage";
+import LoginPage from "./pages/UserPages/pages/LoginPage/LoginPage";
+import RegisterPage from "./pages/UserPages/pages/RegisterPage/RegisterPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import CandidatePage from "./pages/CandidatePage/CandidatePage";
 import JobOffersPage from "./pages/JobOfferPage/JobOfferPage";
+import FormJobOffers from "./pages/JobOfferPage/pages/FormJobOffer/FormJobOfferPages";
 import DetailsJobOffer from "./pages/JobOfferPage/pages/DetailsJobOffer/DetailsJobOffer";
 
 

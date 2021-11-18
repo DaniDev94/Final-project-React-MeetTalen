@@ -4,17 +4,9 @@ const CANDIDATE = `${BASE_URL}/candidates`;
 const USERS = `${BASE_URL}/users`;
 const LOGIN = `${USERS}/login`;
 
-
-
-
-
-
-
-
-
 export {
     JOBOFFER ,
     CANDIDATE,
     USERS,
     LOGIN
-}
+};

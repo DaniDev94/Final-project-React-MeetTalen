@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { deleteCandidate, getCandidates } from '../../api/candidateApi';
 import Navbar from '../../components/Navbar/NavbarPage';
 
-const Candidate = () => {
+const CandidatePage = () => {
 
     const [candidate, setCandidate] = useState([])
 
@@ -12,9 +12,6 @@ const Candidate = () => {
             const data = await getCandidates();
             console.log(data.data)
             setCandidate(data.data)
-
-
-
         } catch (error) {
             console.error(error)
         }
@@ -60,7 +57,7 @@ const Candidate = () => {
     )
 }
 
-export default Candidate;
+export default CandidatePage;
 
 
 
