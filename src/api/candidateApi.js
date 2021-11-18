@@ -18,7 +18,7 @@ const config = {
 export const getCandidates = async () => {
     try {
         const req = await axios.get(CANDIDATE, config)
-        return req
+        return req;
     } catch (error) {
         console.log(error);
     }
