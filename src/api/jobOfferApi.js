@@ -10,18 +10,7 @@ const config = {
         "Access-Control-Allow-Origin": "*",
     }
 }
-/* export const getJobOffers= () => {
-    try{
-        console.log("estoy entrando" )
-        /* const user = {"user":"6192997c2749fb5610aa239d"} */
-/*  const data= {"user":"6192997c2749fb5610aa239d"}
- const req = axios.post(JOBOFFER,data, config)
- console.log("req", req)
- return req */
-/* }catch(error){
-    console.error(error)
-}
-}  */
+
 export const getJobOffers = async () => {
     try {
         console.log('entro en la funcion fetch')
@@ -45,7 +34,7 @@ export const postJobOffers = (jobOffer) => {
     try {
 
         const req = axios.post(JOBOFFER, jobOffer, config)
-        return req
+        return req.data
     } catch (error) {
         console.error(error)
     }
