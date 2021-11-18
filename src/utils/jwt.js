@@ -1,5 +1,5 @@
 export const addToken = () => {
-    const collectToken = localStorage.getItem('token');
+    const collectToken = localStorage.getItem('Token');
     if(!collectToken)  {
         return ''
     };
