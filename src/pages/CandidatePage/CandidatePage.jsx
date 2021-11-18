@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { deleteCandidate, getCandidates } from '../../api/candidateApi';
 import Navbar from '../../components/Navbar/NavbarPage';
+import { Card, ListGroup, ListGroupItem, Image } from 'react-bootstrap';
+import "./candidatepage.css"
 
 const CandidatePage = () => {
 
@@ -34,21 +36,34 @@ const CandidatePage = () => {
 
     return (
         <>
-            <h1>Candidatos</h1>
+            <div >
+                <h1 className="c-candidateTitle" >Candidatos</h1>
+            </div>
+
             <div>
                 {candidate.map(item => {
                     return (
                         <div key={JSON.stringify(item)}>
-                            <img src={item.image} />
-                            <div>
-                                <p>{item.name.first}</p>
-                                <p>{item.profession}</p>
-                            </div>
-                            <div>
-                                <p>{item.information.age}</p>
-                                <p>{item.information.address.locality}</p>
+                            <div className="test">
+                            <div className="c-container">
+                                <Card className="c-cardContainer" style={{ width: '18rem' }}>
+                                    <Card.Img className="c-imgCandidate" variant="top" src={item.image} />
+                                    <Card.Body>
+                                        <Card.Title className="c-nameText">{item.name.first}</Card.Title>
+                                        <Card.Text className="c-professionText">
+                                            {item.profession}
+                                        </Card.Text>
+                                    </Card.Body>
+                                    <div className="c-containerFooterCard">
+                                        <Card.Text className="c-textCard">{item.information.age}</Card.Text>
+                                        <Card.Text className="c-textCard">{item.information.address.locality}</Card.Text>
+                                    </div>
+                                </Card>
                             </div>
                         </div>
+                            </div>
+                       
+
                     )
                 })}
             </div>
@@ -56,6 +71,7 @@ const CandidatePage = () => {
         </>
     )
 }
+
 
 export default CandidatePage;
 
