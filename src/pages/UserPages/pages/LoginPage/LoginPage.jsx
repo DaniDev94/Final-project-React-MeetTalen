@@ -17,7 +17,9 @@ export default function LoginPage() {
     const signIn = async (user) => {
         try {
             const getToken = await loginUser(user);
-            localStorage.setItem('token', getToken.token);
+            console.log(getToken.user._id)
+            localStorage.setItem('Token', getToken.token);
+            localStorage.setItem('User', getToken.user._id);
             navigate('/profile');
         } catch (err) {
             console.log(err)
