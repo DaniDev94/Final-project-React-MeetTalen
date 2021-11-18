@@ -23,7 +23,7 @@ function App() {
           <Route index element={<Home></Home>}/>
           <Route path="login" element={<LoginPage></LoginPage>}/>
           <Route path="register" element={<RegisterPage></RegisterPage>}/>
-          <Route path="profile" element={ <ProfilePage></ProfilePage>}/>
+          <Route path="profile" element={<ProfilePage></ProfilePage>}/>
           <Route path="candidates" element={<CandidatePage></CandidatePage>} />
           <Route path="joboffer">
             <Route index element={<JobOffersPage></JobOffersPage>}/>
