@@ -1,9 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../../../../api/usersApi';
 
 
 export default function LoginPage() {
+
+    const navigate = useNavigate();
 
     const { register, handleSubmit } = useForm();
 
@@ -14,7 +17,8 @@ export default function LoginPage() {
     const signIn = async (user) => {
         try {
             const getToken = await loginUser(user);
-            localStorage.setItem('token', getToken.token)
+            localStorage.setItem('token', getToken.token);
+            navigate('/profile');
         } catch (err) {
             console.log(err)
         }
@@ -33,11 +37,10 @@ export default function LoginPage() {
                         <input type='password' name='password'{...register('password')} />
                     </div>
                     <div>
-                        <input type='submit' value='Continuar'/>
+                        <input type='submit' value='Continuar' />
                     </div>
                 </form>
             </fieldset>
         </div>
     )
-
 }
