@@ -1,27 +1,30 @@
-import React, { useState } from "react";
-import { postJobOffers } from "../../api/jobOfferApi";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { postJobOffers } from "../../../../api/jobOfferApi";
 
-import Navbar from "../../components/Navbar/NavbarPage";
 
-const INITIAL_STATE = {
-  name: "",
-  residents: "",
-  img: "",
-};
+import Navbar from "../../../../components/Navbar/NavbarPage";
 
-const FormJobOffers = (props) => {
-  const [jobOffer, setJobOffer] = useState(INITIAL_STATE);
-
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    setJobOffer({ ...jobOffer, [name]: value });
+const FormJobOffers = () => {
+  const { register, handleSubmit } = useForm();
+  
+  const submit = (data) => {
+    
+    const formData = new FormData();
+    formData.append("jobTitle", data.jobTitle);
+    formData.append("vacancyNumbers", data.vacancyNumbers);
+    formData.append("languages", data.languages);
+    formData.append("sector", data.sector);
+    formData.append("training", data.training);
+    formData.append("jobDescription", data.jobDescription);
+    formData.append("terms", data.terms.salary);
+    formData.append("terms", data.terms.workingHours);
+    formData.append("terms", data.terms.contract);
+ 
+    addJoboffer(formData);
   };
 
-  const submitForm = (e) => {
-    e.preventDefault();
-    addJoboffer();
-  };
-  const addJoboffer = async () => {
+  const addJoboffer = async (jobOffer) => {
     try {
       const newJobOffer = await postJobOffers(jobOffer);
       if (newJobOffer) {
@@ -33,80 +36,55 @@ const FormJobOffers = (props) => {
 
   return (
     <>
-    
+      <form onSubmit={handleSubmit(submit)}>
+        <h2>Descripción</h2>
 
-      <form onSubmit={submitForm}>
-        <fieldset>
-          <div>
-            <h2>Descripción</h2>
-            <label>
-              <p>Oferta</p>
-              <input type="text" placeholder="oferta" onChange={handleInput} />
-            </label>
-            <label>
-              <p>Número de vacantes</p>
-              <input
-                type="text"
-                placeholder="vacancyNumbers"
-                onChange={handleInput}
-              />
-            </label>
-            <label>
-              <p>Idiomas</p>
+        <label htmlFor="jobTitle">Oferta:</label>
+        <input type="text" name="jobTitle" {...register("jobTitle")} />
 
-              <input type="text" placeholder="idiomas" onChange={handleInput} />
-            </label>
-            <label>
-              <p>Sector</p>
+        <label htmlFor="languages">Número de vacantes:</label>
+        <input type="text" name="languages" {...register("languages")} />
 
-              <select>
-                <option>Diseño Ux/Ui </option>
-                <option>Desarrollo Web</option>
-                <option>Ciberseguridad</option>
-              </select>
-            </label>
-            <label>
-              <p>Estudios</p>
-              <input
-                type="text"
-                placeholder="training"
-                onChange={handleInput}
-              />
-            </label>
-            <label>
-              <p>Condiciones laborales</p>
-              <label
-                for="description"
-                placeholder="jobDescription"
-                onChange={handleInput}
-              />
-              <textarea id="description"></textarea>
-            </label>
-            <p>Salario</p>
+        <label htmlFor="vacancyNumbers">idiomas:</label>
+        <input
+          type="text"
+          name="jobvacancyNumbersTitle"
+          {...register("vacancyNumbers")}
+        />
 
-            <label>
-              <input type="text" placeholder=".salary" onChange={handleInput} />
-            </label>
-            <p>Horas</p>
-            <label>
-              <input
-                type="text"
-                placeholder="workingHours"
-                onChange={handleInput}
-              />
-            </label>
-            <p>Tipo de contrato</p>
-            <label>
-              <input
-                type="text"
-                placeholder="contract"
-                onChange={handleInput}
-              />
-            </label>
-          </div>
-          <button type="submit">Enviar</button>
-        </fieldset>
+        <label htmlFor="sector">Sector:</label>
+        <input type="text" name="sector" {...register("sector")} />
+
+        <select>
+          <option>Diseño Ux/Ui </option>
+          <option>Desarrollo Web</option>
+          <option>Ciberseguridad</option>
+        </select>
+
+        <label htmlFor="training">Estudios:</label>
+        <input type="text" name="training" {...register("training")} />
+
+        <label htmlFor="jobDescription">Condiciones laborales:</label>
+        <input
+          type="text"
+          name="jobDescription"
+          {...register("jobDescription")}
+        />
+
+        <label htmlFor="salary">Salario:</label>
+        <input type="text" name="salary" {...register("salary")} />
+
+        <label htmlFor="workingHours">Horas:</label>
+        <input type="text" name="workingHours" {...register("workingHours")} />
+
+        <label htmlFor="contract">Tipo de contrato:</label>
+        <input type="text" name="contract" {...register("contract")} />
+
+        <div>
+          <input type="submit" value="Enviar" />
+        </div>
       </form>
+
       <Navbar></Navbar>
     </>
   );
