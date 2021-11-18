@@ -18,11 +18,12 @@ const config = {
 
 export const getJobOffers = async () => {
     try {
-        const data = { "user": "6192997c2749fb5610aa239d" }
+        const data = localStorage.getItem('User');
+        const addKeyToUser = { user: data };
         const req = await fetch('http://localhost:4000/joboffer', {
             method: "POST",
             headers: config.headers,
-            body: JSON.stringify(data)
+            body: JSON.stringify(addKeyToUser)
         })
         const res = await req.json();
         console.log(res);
