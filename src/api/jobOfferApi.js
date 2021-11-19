@@ -1,5 +1,5 @@
 import axios from "axios";
-import { JOBOFFER } from './apiRoutes';
+import { JOBOFFER, CREATE_JOBOFFER } from './apiRoutes';
 import { addToken } from "../utils/jwt";
 
 
@@ -11,7 +11,7 @@ const config = {
         "Accept": "application/json",
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
-        'Authorization': accessToken
+       'Authorization': accessToken 
     }
 }
 
@@ -34,9 +34,10 @@ export const getJobOffers = async () => {
 }
 
 
-export const postJobOffers = (jobOffer) => {
+export const postJobOffers = async (jobOffer) => {
     try {
-        const req = axios.post(JOBOFFER, jobOffer, config);
+        const req = await axios.post(CREATE_JOBOFFER, jobOffer, config);
+        console.log(req)
         return req;
     } catch (error) {
         console.error(error)

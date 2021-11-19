@@ -1,30 +1,49 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 import { postJobOffers } from "../../../../api/jobOfferApi";
-import { Link } from 'react-router-dom';
+
+
 import Navbar from "../../../../components/Navbar/NavbarPage";
 
-const INITIAL_STATE = {
-  name: "",
-  residents: "",
-  img: "",
-};
+const FormJobOffers = () => {
+  const { register, handleSubmit } = useForm();
 
-const FormJobOffers = (props) => {
-  const [jobOffer, setJobOffer] = useState(INITIAL_STATE);
+  const submit = (data) => {
+    console.log(data.salary)
+    const terms= {
+      salary : data.salary,
+      workingHours: data.workingHours,
+      contract: data.contract
+    }
+    /* const token = localStorage.getItem('token')
+    const idUser = token.id.toString()
+    console.log(idUser) */
 
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    setJobOffer({ ...jobOffer, [name]: value });
+    /* const formData = new FormData();
+    formData.append("jobTitle", data.jobTitle);
+    formData.append("vacancyNumbers", data.vacancyNumbers);
+    formData.append("languages", data.languages);
+    formData.append("sector", data.sector);
+    formData.append("training", data.training);
+    formData.append("jobDescription", data.jobDescription);
+    formData.append("terms.salary", data.salary);
+    formData.append("terms.workingHours", data.workingHours);
+    //formData.append("user",userId) */
+    //addJoboffer(formData);
+    /* console.log(data.jobInformation) */
+    let job = {} 
+    job.jobInformation= data.jobInformation
+    /* job.user= User  */
+
+    console.log(job)
+    addJoboffer(job)
   };
 
-  const submitForm = (e) => {
-    e.preventDefault();
-    addJoboffer();
-  };
-  const addJoboffer = async () => {
+  const addJoboffer = async (jobOffer) => {
     try {
       const newJobOffer = await postJobOffers(jobOffer);
       if (newJobOffer) {
+        console.log('Oferta creada')
       }
     } catch (error) {
       console.error(error);
@@ -33,79 +52,62 @@ const FormJobOffers = (props) => {
 
   return (
     <>
-    
+      <form onSubmit={handleSubmit(submit)}>
+        <h2>Descripción</h2>
 
-      <form onSubmit={submitForm}>
-        <fieldset>
-          <div>
-            <h2>Descripción</h2>
-            <label>
-              <p>Oferta</p>
-              <input type="text" placeholder="oferta" onChange={handleInput} />
-            </label>
-            <label>
-              <p>Número de vacantes</p>
-              <input
-                type="text"
-                placeholder="vacancyNumbers"
-                onChange={handleInput}
-              />
-            </label>
-            <label>
-              <p>Idiomas</p>
+        <label htmlFor="jobTitle">Oferta:</label>
+        <input type="text" name="jobInformation.jobTitle" {...register("jobInformation.jobTitle")} />
 
-              <input type="text" placeholder="idiomas" onChange={handleInput} />
-            </label>
-            <label>
-              <p>Sector</p>
+        <label htmlFor="languages">Idiomas:</label>
+        <input type="text" name="jobInformation.languages" {...register("jobInformation.languages")} />
 
-              <select>
-                <option>Diseño Ux/Ui </option>
-                <option>Desarrollo Web</option>
-                <option>Ciberseguridad</option>
-              </select>
-            </label>
-            <label>
-              <p>Estudios</p>
-              <input
-                type="text"
-                placeholder="training"
-                onChange={handleInput}
-              />
-            </label>
-            <label>
-              <p>Condiciones laborales</p>
-              <label
-                for="description"
-                placeholder="jobDescription"
-                onChange={handleInput}
-              />
-              <textarea id="description"></textarea>
-            </label>
-            <p>Salario</p>
-            <label>
-              <input type="text" placeholder=".salary" onChange={handleInput} />
-            </label>
-            <p>Horas</p>
-            <label>
-              <input
-                type="text"
-                placeholder="workingHours"
-                onChange={handleInput}
-              />
-            </label>
-            <p>Tipo de contrato</p>
-            <label>
-              <input
-                type="text"
-                placeholder="contract"
-                onChange={handleInput}
-              />
-            </label>
-          </div>
-          <button type="submit">Enviar</button>
-        </fieldset>
+        <label htmlFor="vacancyNumbers">Vacantes:</label>
+        <input
+          type="text"
+          name="jobInformation.vacancyNumbers"
+          {...register("jobInformation.vacancyNumbers")}
+        />
+
+        <label htmlFor="sector">Sector:</label>
+        {/* <input type="text" name="jobInformation.sector" {...register("jobInformation.sector")} /> */}
+
+        <select name="jobInformation.sector" {...register("jobInformation.sector")}>
+          <option value =" Diseño Ux/Ui">Diseño Ux/Ui </option>
+          <option value ="Desarrollo web">Desarrollo Web</option>
+          <option value= "Ciberseguridad">Ciberseguridad</option>
+        </select>
+
+        <label htmlFor="training">Estudios:</label>
+        
+        <select name="jobInformation.training" {...register("jobInformation.training")}>
+          <option value ="Grado Medio">Grado Medio</option>
+          <option value ="Grado Superior">Grado Superior</option>
+          <option value= "Master">Master</option>
+          <option value= "Licenciatura">Licenciatura</option>
+          <option value= "Sin formación">Sin formación</option>
+        </select>
+
+        <label htmlFor="jobDescription">Condiciones laborales:</label>
+        <input
+          type="text"
+          name="jobInformation.jobDescription"
+          {...register("jobInformation.jobDescription")}
+        />
+
+        <label htmlFor="salary">Salario:</label>
+        <input type="number" name="jobInformation.terms.salary" {...register("jobInformation.terms.salary")} />
+
+        <label htmlFor="workingHours">Horas:</label>
+        <input type="number" name="jobInformation.terms.workingHours" {...register("jobInformation.terms.workingHours")} />
+
+        <label htmlFor="contract">Tipo de contrato:</label>
+        <input type="text" name="jobInformation.terms.contract" {...register("jobInformation.terms.contract")} />
+
+        <div>
+          <input type="submit" value="Enviar" />
+        </div>
       </form>
+
       <Navbar></Navbar>
     </>
   );
