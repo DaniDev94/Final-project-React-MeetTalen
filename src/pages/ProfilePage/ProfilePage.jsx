@@ -7,15 +7,15 @@ export default function ProfilePage() {
 
     const navigate = useNavigate();
 
-    const logoutRedirect = () =>{
+  /*   const logoutRedirect = () =>{
         return logoutUser(navigate('/login'));
-    }
+    } */
 
     return (
         <div>
             <p>Perfil</p>
             <div>
-                <button onClick={logoutRedirect}>Cerrar Sesion </button> 
+                <button onClick={()=>{navigate('/login')}}>Cerrar Sesion </button> 
             </div>
             <Navbar></Navbar>
         </div>
