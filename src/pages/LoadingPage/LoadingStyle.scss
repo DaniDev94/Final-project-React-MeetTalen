@@ -1,0 +1,12 @@
+.c-loadin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__load {
+        margin-top: 5rem;
+    }
+    &__img {
+        margin-top: 2rem;
+    }
+}
