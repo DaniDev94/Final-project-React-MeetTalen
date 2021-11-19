@@ -3,7 +3,7 @@ import 'primereact/resources/themes/lara-light-indigo/theme.css'
 import 'primereact/resources/primereact.min.css'
 import 'primeicons/primeicons.css'
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage/HomePage";
+import HomeCarouselPage from "./pages/HomeCarouselPage/HomeCarouselPage";
 import Loadingpage from "./pages/LoadingPage/Loadingpage";
 import LoginPage from "./pages/UserPages/pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/UserPages/pages/RegisterPage/RegisterPage";
@@ -16,20 +16,12 @@ import DetailsJobOffer from "./pages/JobOfferPage/pages/DetailsJobOffer/DetailsJ
 
 function App() {
 
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  })
-
   return (
     <div>
       <Routes>
         <Route path="/">
-          <Route index element={<HomePage></HomePage>} />
-          <Route path="login" element={isLoading == true ? <Loadingpage></Loadingpage> : <LoginPage></LoginPage>} />
+          <Route index element={<HomeCarouselPage></HomeCarouselPage>} />
+          <Route path="login" element={<Loadingpage></Loadingpage>} />
           <Route path="register" element={<RegisterPage></RegisterPage>} />
           <Route path="profile" element={<ProfilePage></ProfilePage>} />
           <Route path="candidates" element={<CandidatePage></CandidatePage>} />
