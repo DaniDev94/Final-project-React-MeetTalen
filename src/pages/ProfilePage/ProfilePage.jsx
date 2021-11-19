@@ -8,7 +8,7 @@ export default function ProfilePage() {
     const navigate = useNavigate();
 
     const logoutRedirect = () =>{
-        return logoutUser(navigate('/'));
+        return logoutUser(navigate('/login'));
     }
 
     return (
