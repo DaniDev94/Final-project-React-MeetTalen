@@ -11,7 +11,7 @@ const config = {
         "Accept": "application/json",
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
-       'Authorization': accessToken 
+        'Authorization': accessToken
     }
 }
 
@@ -20,7 +20,7 @@ export const getJobOffers = async () => {
     try {
         const data = localStorage.getItem('User');
         const addKeyToUser = { user: data };
-        const req = await fetch('http://localhost:4000/joboffer', {
+        const req = await fetch(JOBOFFER, {
             method: "POST",
             headers: config.headers,
             body: JSON.stringify(addKeyToUser)
