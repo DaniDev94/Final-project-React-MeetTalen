@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import LoginPage from '../UserPages/pages/LoginPage/LoginPage';
 import './LoadingStyle.scss';
 
+
 export default function Loadingpage() {
 
     const [isLoading, setIsLoading] = useState(true);
