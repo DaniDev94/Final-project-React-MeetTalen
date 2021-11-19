@@ -7,7 +7,7 @@ export const Loading = () => {
         <div>
             <Loader
                 type="ThreeDots"
-                color="#3498db"
+                color="#00b3cd"
                 height={100}
                 width={100}
                 timeout={3000} 
