@@ -16,7 +16,7 @@ const theme = createTheme({
 export default function ButtonLigth() {
     return (
         <ThemeProvider theme={theme}>
-            <Button sx={{padding: '0.8rem 6.5rem', fontWeight: '600', fontSize: '0.8rem'}} color="neutral" variant="contained">
+            <Button sx={{ fontFamily: "Montserrat", padding: '0.8rem 6.5rem', fontWeight: '600', fontSize: '0.8rem' }} color="neutral" variant="contained">
                 Continuar
             </Button>
         </ThemeProvider>
