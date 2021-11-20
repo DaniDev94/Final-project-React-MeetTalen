@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getJobOffers } from "../../api/jobOfferApi";
 import Navbar from "../../components/Navbar/NavbarPage";
-import './JobOfferPage.scss'
+import './JobOfferPage.scss';
 
 const JobOffersPage = () => {
   const [jobOffers, setJobOffers] = useState([]);
@@ -22,6 +22,7 @@ const JobOffersPage = () => {
 
   return (
     <>
+    
       <h1>Ofertas de trabajo</h1>
 
       <div>
