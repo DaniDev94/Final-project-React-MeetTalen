@@ -44,7 +44,7 @@ const CandidatePage = () => {
                 <h1 className="c-pageTitle" >Candidatos</h1>
             </div>
 
-            <div className="test">
+            <div className="c-mainContainer">
                 {candidate.map(item => {
                     return (
                         <div >
