@@ -1,0 +1,22 @@
+.c-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+.c-row{
+    padding: 0.8em;
+    
+}
+.c-input{
+    border-radius: 4px;
+    width: 15em;
+    height: 2em;
+    &:hover{
+        box-shadow: 11px 6px 5px rgb(92, 89, 89) ;
+        opacity: 0.5;
+    }
+}
