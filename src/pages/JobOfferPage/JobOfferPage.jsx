@@ -25,7 +25,7 @@ const JobOffersPage = () => {
     <>
       <h1 className="c-pageTitle" >Ofertas de trabajo</h1>
 
-      <div  className="test">
+      <div  className="c-mainContainer">
         {jobOffers.map((item) => {
           console.log(item);
           return (

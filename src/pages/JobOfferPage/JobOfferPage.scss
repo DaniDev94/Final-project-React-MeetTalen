@@ -9,14 +9,13 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.test{
+.c-mainContainer{
     background-color: rgb( 13, 32, 42);
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2.5rem;
-    // margin-bottom: 1000px;
 }
 .c-linkJobOffer{
     text-decoration: none;
