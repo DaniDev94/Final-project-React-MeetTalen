@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { deleteCandidate, getCandidates } from '../../api/candidateApi';
 import Navbar from '../../components/Navbar/NavbarPage';
-import { Card, ListGroup, ListGroupItem, Image } from 'react-bootstrap';
-import "./candidatepage.css"
+import { Link } from "react-router-dom";
+import { Card, Image } from 'react-bootstrap';
+import { BiMap } from 'react-icons/bi';
+import './CandidatePage.scss'
+
+
 
 const CandidatePage = () => {
 
@@ -37,35 +41,40 @@ const CandidatePage = () => {
     return (
         <>
             <div >
-                <h1 className="c-candidateTitle" >Candidatos</h1>
+                <h1 className="c-pageTitle" >Candidatos</h1>
             </div>
 
-            <div>
+            <div className="test">
                 {candidate.map(item => {
                     return (
-                        <div key={JSON.stringify(item)}>
-                            <div className="test">
-                            <div className="c-container">
-                                <Card className="c-cardContainer" style={{ width: '18rem' }}>
-                                    <Card.Img className="c-imgCandidate" variant="top" src={item.image} />
-                                    <Card.Body>
-                                        <Card.Title className="c-nameText">{item.name.first}</Card.Title>
-                                        <Card.Text className="c-professionText">
-                                            {item.profession}
-                                        </Card.Text>
-                                    </Card.Body>
-                                    <div className="c-containerFooterCard">
-                                        <Card.Text className="c-textCard">{item.information.age}</Card.Text>
-                                        <Card.Text className="c-textCard">{item.information.address.locality}</Card.Text>
+                        <div >
+                            <div key={JSON.stringify(item)}>
+                                <div>
+                                    <div className="c-container">
+                                        <Card className="c-cardContainer">
+                                            <Card.Img className="c-imgCandidate" variant="top" src={item.image} />
+                                            <div className="c-containerText">
+                                                <Card.Body>
+                                                    <Card.Title className="c-nameText">{item.name.first}</Card.Title>
+                                                    <Card.Text className="c-professionText">
+                                                        {item.profession}
+                                                    </Card.Text>
+                                                </Card.Body>
+                                                <div className="c-containerFooterCard">
+                                                    <Card.Text className="c-textCard">{item.information.age}</Card.Text>
+                                                    <Card.Text className="c-textCard">{item.information.address.locality} <BiMap /> </Card.Text>
+                                                </div>
+                                            </div>
+                                        </Card>
                                     </div>
-                                </Card>
+                                </div>
                             </div>
                         </div>
-                            </div>
-                       
+
 
                     )
                 })}
+
             </div>
             <Navbar></Navbar>
         </>
