@@ -1,6 +1,6 @@
 import React from 'react'
 import './InfoThreeStyle.scss'
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import ButtonLigth from '../../../../components/ButtonLigth/ButtonLigth'
 
 
