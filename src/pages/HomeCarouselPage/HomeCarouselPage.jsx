@@ -5,6 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 import { Helmet } from 'react-helmet';
 import InfoOnePage from './pages/InfoOnePage/InfoOnePage';
 import InfoTwoPage from './pages/InfoTwoPage/InfoTwoPage';
+import InfoThreePage from './pages/InfoThreePage/InfoThreePage';
 
 
 export default function HomeCarouselPage() {
@@ -23,6 +24,9 @@ export default function HomeCarouselPage() {
                 </div>
                 <div>
                     <InfoTwoPage></InfoTwoPage>
+                </div>
+                <div>
+                    <InfoThreePage></InfoThreePage>
                 </div>
 
             </Carousel>
