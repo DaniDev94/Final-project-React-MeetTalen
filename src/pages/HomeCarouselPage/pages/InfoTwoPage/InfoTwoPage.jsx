@@ -1,9 +1,11 @@
 import React from 'react'
-import ButtonLigth from '../../../../components/ButtonLigth/ButtonLigth'
 import './InfoTwoStyle.scss'
+import { useNavigate } from 'react-router';
+import ButtonLigth from '../../../../components/ButtonLigth/ButtonLigth'
 
 
 export default function InfoTwoPage() {
+    const navigate = useNavigate();
     return (
         <>
             <div className='c-container'>
@@ -13,7 +15,7 @@ export default function InfoTwoPage() {
                 <div className='b-info'>
                     <p className='b-info__content'>Crear eventos únicos para  interactuar con los cantidatos desde cualquier lugar</p>
                 </div>
-                <div className='b-button-two'>
+                <div onClick={() => { navigate('/login') }} className='b-button-two'>
                     <ButtonLigth></ButtonLigth>
                 </div>
             </div>

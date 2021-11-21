@@ -1,9 +1,11 @@
 import React from 'react';
 import './InfoOneStyle.scss';
+import { useNavigate } from 'react-router';
 import ButtonLigth from '../../../../components/ButtonLigth/ButtonLigth';
 
 
 export default function InfoOnePage() {
+    const navigate = useNavigate();
     return (
         <>
             <div className='c-container'>
@@ -13,7 +15,7 @@ export default function InfoOnePage() {
                 <div className='b-text'>
                     <p className='b-text__content'>Meettalent es una herramienta que te ayuda conectar con el mejor talento</p>
                 </div>
-                <div className='b-button-one'>
+                <div onClick={() => { navigate('/login') }} className='b-button-one'>
                     <ButtonLigth></ButtonLigth>
                 </div>
             </div>
