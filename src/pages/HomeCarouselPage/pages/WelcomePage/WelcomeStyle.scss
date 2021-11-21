@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 4rem;
+    margin-top: 3rem;
     @media (min-width: 778px) {
         margin-top: 5rem;
     }
@@ -47,8 +47,14 @@
 
 .b-paragraph {
     margin-top: 1.7rem;
+    width: 20rem;
+    @media (min-width: 778px) {
+        width: 30rem;
+    }
     &__text {
+        width: 100%;
         margin: 1rem 0 0 0;
+        padding: 0 2rem;
         text-align: center;
         font-family: "Montserrat", sans-serif;
         font-weight: 500;

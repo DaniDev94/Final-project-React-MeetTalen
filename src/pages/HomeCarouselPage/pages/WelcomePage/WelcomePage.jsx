@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import './WelcomeStyle.scss';
 import ButtonLigth from '../../../../components/ButtonLigth/ButtonLigth';
 
@@ -7,9 +6,7 @@ import ButtonLigth from '../../../../components/ButtonLigth/ButtonLigth';
 export default function WelcomePage() {
     return (
         <>
-            <Helmet>
-                <style>{'body { background-color: #0d202a; }'}</style>
-            </Helmet>
+        <div>
             <div className='c-container'>
                 <div className='b-logo'>
                     <img className='b-logo__img'src="images/logo-layout/logo@2x.png" alt="logo" />
@@ -27,6 +24,7 @@ export default function WelcomePage() {
                     <ButtonLigth></ButtonLigth>
                 </div>
             </div>
+        </div>
         </>
     )
 }
