@@ -2,6 +2,7 @@ import React from 'react';
 import './InfoOneStyle.scss';
 import ButtonLigth from '../../../../components/ButtonLigth/ButtonLigth';
 
+
 export default function InfoOnePage() {
     return (
         <>
