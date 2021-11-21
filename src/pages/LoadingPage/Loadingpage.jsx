@@ -17,15 +17,14 @@ export default function Loadingpage() {
     return (
         <>
             <Helmet>
-                {isLoading ? <style>{'body { background-color: #0d202a; }'}</style>
-                    : <style>{'body { background-color: white; }'}</style>}
+                <style>{'body { background-color: #0d202a; }'}</style>
             </Helmet>
             {isLoading ?
-                <div className='c-loadin'>
-                    <div className='c-loadin__load'>
+                <div className='c-loading'>
+                    <div className='c-loading__load'>
                         <Loading></Loading>
                     </div>
-                    <div className='c-loadin__img'>
+                    <div className='c-loading__img'>
                         <img src="images/logo-layout/group7.png" alt="Logo" />
                     </div>
                 </div>
