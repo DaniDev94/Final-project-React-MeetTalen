@@ -1,24 +1,27 @@
-import React from 'react'
-import './HomeCarouselStyle.scss'
+import React, { useState } from 'react'
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import InfoOnePage from './pages/InfoOnePage/InfoOnePage';
+import { Helmet } from 'react-helmet';
 
 
 export default function HomeCarouselPage() {
+
     return (
-        <div>
-            <Carousel className='control-dots carousel-status dot selected'  showArrows={false}>
+        <>
+            <Helmet>
+                <style>{'body { background-color: #0d202a; }'}</style>
+            </Helmet>
+            <Carousel autoPlay={true}>
                 <div>
-                <WelcomePage></WelcomePage>
+                    <WelcomePage></WelcomePage>
                 </div>
                 <div>
+                    <InfoOnePage></InfoOnePage>
                 </div>
-                <div>
-                </div>
-                <div>
-                </div>
+
             </Carousel>
-        </div>
+        </>
     )
 }
