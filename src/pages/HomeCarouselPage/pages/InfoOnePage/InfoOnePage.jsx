@@ -12,7 +12,7 @@ export default function InfoOnePage() {
                 <div className='b-text'>
                     <p className='b-text__content'>Meettalent es una herramienta que te ayuda conectar con el mejor talento</p>
                 </div>
-                <div className='b-button'>
+                <div className='b-button-one'>
                     <ButtonLigth></ButtonLigth>
                 </div>
             </div>

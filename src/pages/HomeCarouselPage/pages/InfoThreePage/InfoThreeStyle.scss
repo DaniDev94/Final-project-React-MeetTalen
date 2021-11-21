@@ -5,12 +5,12 @@
     flex-direction: column;
 }
 
-.b-image {
+.b-image-three {
     width: 100%;
-    max-width: 65%;
+    max-width: 90%;
     margin-top: 1.8rem;
     @media (min-width: 778px) {
-        max-width: 20%;
+        max-width: 25%;
         margin: 2.5rem 0;
     }
     &__img {
@@ -19,7 +19,7 @@
     }
 }
 
-.b-text {
+.b-info-text {
     margin-top: 1.7rem;
     &__content {
         padding: 0px 15px;
@@ -32,9 +32,9 @@
     }
 }
 
-.b-button-one {
-    margin-top: 4.8rem;
+.b-button-three {
+    margin-top: 5rem;
     @media (min-width: 778px) {
-        margin-top: 6rem;
+        margin-top: 6.9rem;
     }
 }

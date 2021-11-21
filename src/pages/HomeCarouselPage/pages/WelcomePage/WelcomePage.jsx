@@ -20,7 +20,7 @@ export default function WelcomePage() {
                 <div className='b-paragraph'>
                     <p className='b-paragraph__text'>Atrae y enamora a los mejores candidatos</p>
                 </div>
-                <div className='b-btn'>
+                <div className='b-button'>
                     <ButtonLigth></ButtonLigth>
                 </div>
             </div>
