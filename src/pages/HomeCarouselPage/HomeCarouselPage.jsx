@@ -28,7 +28,6 @@ export default function HomeCarouselPage() {
                 <div>
                     <InfoThreePage></InfoThreePage>
                 </div>
-
             </Carousel>
         </>
     )
