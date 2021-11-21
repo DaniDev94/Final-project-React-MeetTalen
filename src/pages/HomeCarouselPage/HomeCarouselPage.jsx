@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import InfoOnePage from './pages/InfoOnePage/InfoOnePage';
 import { Helmet } from 'react-helmet';
+import InfoOnePage from './pages/InfoOnePage/InfoOnePage';
+import InfoTwoPage from './pages/InfoTwoPage/InfoTwoPage';
 
 
 export default function HomeCarouselPage() {
@@ -19,6 +20,9 @@ export default function HomeCarouselPage() {
                 </div>
                 <div>
                     <InfoOnePage></InfoOnePage>
+                </div>
+                <div>
+                    <InfoTwoPage></InfoTwoPage>
                 </div>
 
             </Carousel>
