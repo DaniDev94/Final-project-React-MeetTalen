@@ -2,6 +2,7 @@ import React from 'react'
 import './InfoThreeStyle.scss'
 import ButtonLigth from '../../../../components/ButtonLigth/ButtonLigth'
 
+
 export default function InfoThreePage() {
     return (
         <div>
