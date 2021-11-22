@@ -1,14 +1,30 @@
-import { useParams } from "react-router-dom"
+import React, { useState, useEffect } from "react";
 import Navbar from "../../../../components/Navbar/NavbarPage";
+import { getJobOfferById } from "../../../../api/jobOfferApi"
+import { useParams } from "react-router-dom";
 
 
-
-export default function DetailsJobOffer(){
-
-
+const DetailsJobOffer = () => {
+   
+   
     const { id } = useParams();
-    console.log(id);
-    // Crea nuevo metodo http en el back buscando la oferta por id, llamar a la api(oferta) por ese mismo id y settear la oferta que obtenemos pintando los datoas sin.
+    const [details, setDetails] = useState([]);
+    const getJobOfferId = async () => {
+        try {
+            const data = await getJobOfferById(id);
+            const item = data.data;
+            setDetails(item);
+            
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        getJobOfferId() ;
+        console.log("estamos en  effect" , details)
+    },[]);
+
     return (
         <>
         <div>Detalles de la oferta</div>
@@ -16,3 +32,5 @@ export default function DetailsJobOffer(){
         </>
     )
 }
+
+export default DetailsJobOffer

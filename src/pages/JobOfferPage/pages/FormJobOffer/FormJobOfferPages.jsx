@@ -1,38 +1,32 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { postJobOffers } from "../../../../api/jobOfferApi";
-
-
+import '../FormJobOffer/FormJobOffer.scss'
+import { Helmet } from "react-helmet";
 import Navbar from "../../../../components/Navbar/NavbarPage";
+import TextField from '@mui/material/TextField';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { useNavigate } from "react-router";
+import { ChevronLeftIcon } from '@chakra-ui/icons'
+
 
 const FormJobOffers = () => {
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
 
   const submit = (data) => {
     console.log(data.salary)
-    const terms= {
-      salary : data.salary,
+    const terms = {
+      salary: data.salary,
       workingHours: data.workingHours,
       contract: data.contract
     }
-    /* const token = localStorage.getItem('token')
-    const idUser = token.id.toString()
-    console.log(idUser) */
 
-    /* const formData = new FormData();
-    formData.append("jobTitle", data.jobTitle);
-    formData.append("vacancyNumbers", data.vacancyNumbers);
-    formData.append("languages", data.languages);
-    formData.append("sector", data.sector);
-    formData.append("training", data.training);
-    formData.append("jobDescription", data.jobDescription);
-    formData.append("terms.salary", data.salary);
-    formData.append("terms.workingHours", data.workingHours);
-    //formData.append("user",userId) */
-    //addJoboffer(formData);
-    /* console.log(data.jobInformation) */
-    let job = {} 
-    job.jobInformation= data.jobInformation
+    let job = {}
+    job.jobInformation = data.jobInformation
     /* job.user= User  */
 
     console.log(job)
@@ -44,6 +38,7 @@ const FormJobOffers = () => {
       const newJobOffer = await postJobOffers(jobOffer);
       if (newJobOffer) {
         console.log('Oferta creada')
+        navigate('/joboffer')
       }
     } catch (error) {
       console.error(error);
@@ -52,59 +47,81 @@ const FormJobOffers = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(submit)}>
-        <h2>Descripción</h2>
+      <Helmet>
 
-        <label htmlFor="jobTitle">Oferta:</label>
-        <input type="text" name="jobInformation.jobTitle" {...register("jobInformation.jobTitle")} />
+        <style>{'body { background-color: #d9d9db; }'}</style>
 
-        <label htmlFor="languages">Idiomas:</label>
-        <input type="text" name="jobInformation.languages" {...register("jobInformation.languages")} />
+      </Helmet>
+      <div className="c-back">
 
-        <label htmlFor="vacancyNumbers">Vacantes:</label>
-        <input
-          type="text"
-          name="jobInformation.vacancyNumbers"
-          {...register("jobInformation.vacancyNumbers")}
-        />
+        <ChevronLeftIcon className="c-back" onClick={() => { navigate('/joboffer') }}></ChevronLeftIcon>
+        <h2>Descripción de la oferta</h2>
 
-        <label htmlFor="sector">Sector:</label>
-        {/* <input type="text" name="jobInformation.sector" {...register("jobInformation.sector")} /> */}
+      </div>
+      <form className="c-form" onSubmit={handleSubmit(submit)}>
+        <label className="c-row" htmlFor="oferta"></label>
+        <TextField className="c-Text" id="outlined-basic" label="Oferta" variant="outlined" {...register("jobInformation.jobTitle")} />
+        <label className="c-row" htmlFor="languages"></label>
+        <TextField className="c-Text" id="outlined-basic" label="Idiomas" variant="outlined" {...register("jobInformation.languages")} />
+        <label className="c-row" htmlFor="city"></label>
+        <TextField className="c-Text" id="outlined-basic" label="Ciudad" variant="outlined" {...register("jobInformation.city")} />
+        <label className="c-row" htmlFor="vacancyNumbers"></label>
+        <TextField className="c-Text" id="outlined-basic" label="Vacantes" variant="outlined"  {...register("jobInformation.vacancyNumbers")} />
 
-        <select name="jobInformation.sector" {...register("jobInformation.sector")}>
-          <option value =" Diseño Ux/Ui">Diseño Ux/Ui </option>
-          <option value ="Desarrollo web">Desarrollo Web</option>
-          <option value= "Ciberseguridad">Ciberseguridad</option>
-        </select>
+        <FormControl sx={{ m: 1.5, minWidth: 220 }}>
+          <InputLabel id="demo-simple-select-label" >Sector</InputLabel>
+          <Select
+            className="c-Text"
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            label="Sector"
 
-        <label htmlFor="training">Estudios:</label>
-        
-        <select name="jobInformation.training" {...register("jobInformation.training")}>
-          <option value ="Grado Medio">Grado Medio</option>
-          <option value ="Grado Superior">Grado Superior</option>
-          <option value= "Master">Master</option>
-          <option value= "Licenciatura">Licenciatura</option>
-          <option value= "Sin formación">Sin formación</option>
-        </select>
+            name="jobInformation.sector"
+            {...register("jobInformation.sector")}
 
-        <label htmlFor="jobDescription">Condiciones laborales:</label>
-        <input
-          type="text"
-          name="jobInformation.jobDescription"
-          {...register("jobInformation.jobDescription")}
-        />
+          >
+            <MenuItem value="Diseño Ux/Ui" >Diseño Ux/Ui</MenuItem>
+            <MenuItem value="Desarrollo Web">Desarrollo Web</MenuItem>
+            <MenuItem value="Ciberseguridad">Ciberseguridad</MenuItem>
+          </Select>
+        </FormControl>
 
-        <label htmlFor="salary">Salario:</label>
-        <input type="number" name="jobInformation.terms.salary" {...register("jobInformation.terms.salary")} />
+        <FormControl sx={{ m: 1.5, minWidth: 220 }}>
+          <InputLabel id="demo-simple-select-label" >Estudios</InputLabel>
+          <Select
+            className="c-Text"
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            label="Estudios"
 
-        <label htmlFor="workingHours">Horas:</label>
-        <input type="number" name="jobInformation.terms.workingHours" {...register("jobInformation.terms.workingHours")} />
+            name="jobInformation.training"
+            {...register("jobInformation.training")}
 
-        <label htmlFor="contract">Tipo de contrato:</label>
-        <input type="text" name="jobInformation.terms.contract" {...register("jobInformation.terms.contract")} />
+          >
+            <MenuItem value="Grado Medio" >Grado Medio</MenuItem>
+            <MenuItem value="Grado Superior">Grado Superior</MenuItem>
+            <MenuItem value="Grado Superior">Grado Superior</MenuItem>
+            <MenuItem value="Master">Master</MenuItem>
+            <MenuItem value="Licenciatura">Licenciatura</MenuItem>
+            <MenuItem value="Sin formación">Sin formación</MenuItem>
+          </Select>
+        </FormControl>
+
+
+        <label className="c-row" htmlFor="jobDescription"></label>
+        <TextField className="c-Text" id="outlined-basic" label="Condiciones laborales" variant="outlined" {...register("jobInformation.jobDescription")} />
+
+        <label className="c-row" htmlFor="salary"></label>
+        <TextField className="c-Text" id="outlined-basic" label="Salario" variant="outlined"{...register("jobInformation.salary")} />
+
+        <label className="c-row" htmlFor="workingHours"></label>
+        <TextField className="c-Text" id="outlined-basic" label="Horas" variant="outlined"  {...register("jobInformation.workingHours")} />
+
+        <label className="c-row" htmlFor="contract"></label>
+        <TextField className="c-Text" id="outlined-basic" label="Tipo de contrato" variant="outlined" {...register("jobInformation.contract")} />
 
         <div>
-          <input type="submit" value="Enviar" />
+          <input type="submit" value="Continuar" />
         </div>
       </form>
 
