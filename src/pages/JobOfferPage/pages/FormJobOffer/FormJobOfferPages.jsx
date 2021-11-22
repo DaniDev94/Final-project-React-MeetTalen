@@ -13,8 +13,6 @@ import { useNavigate } from "react-router";
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 
 
-
-
 const FormJobOffers = () => {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
@@ -54,23 +52,13 @@ const FormJobOffers = () => {
         <style>{'body { background-color: #d9d9db; }'}</style>
 
       </Helmet>
-      <div className="c-volver">
+      <div className="c-back">
 
-       
-         
-       
-          <ChevronLeftIcon className="c-volvera" onClick={() => { navigate('/joboffer') }}></ChevronLeftIcon>
-          <h2>Descripción de la oferta</h2>
-      
-       
+        <ChevronLeftIcon className="c-back" onClick={() => { navigate('/joboffer') }}></ChevronLeftIcon>
+        <h2>Descripción de la oferta</h2>
+
       </div>
-
-
       <form className="c-form" onSubmit={handleSubmit(submit)}>
-
-
-
-
         <label className="c-row" htmlFor="oferta"></label>
         <TextField className="c-Text" id="outlined-basic" label="Oferta" variant="outlined" {...register("jobInformation.jobTitle")} />
         <label className="c-row" htmlFor="languages"></label>
@@ -79,9 +67,6 @@ const FormJobOffers = () => {
         <TextField className="c-Text" id="outlined-basic" label="Ciudad" variant="outlined" {...register("jobInformation.city")} />
         <label className="c-row" htmlFor="vacancyNumbers"></label>
         <TextField className="c-Text" id="outlined-basic" label="Vacantes" variant="outlined"  {...register("jobInformation.vacancyNumbers")} />
-
-
-
 
         <FormControl sx={{ m: 1.5, minWidth: 220 }}>
           <InputLabel id="demo-simple-select-label" >Sector</InputLabel>
@@ -100,8 +85,6 @@ const FormJobOffers = () => {
             <MenuItem value="Ciberseguridad">Ciberseguridad</MenuItem>
           </Select>
         </FormControl>
-
-
 
         <FormControl sx={{ m: 1.5, minWidth: 220 }}>
           <InputLabel id="demo-simple-select-label" >Estudios</InputLabel>
