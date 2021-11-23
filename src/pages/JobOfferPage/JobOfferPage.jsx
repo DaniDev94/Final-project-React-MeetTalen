@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { getJobOffers } from "../../api/jobOfferApi";
 import Navbar from "../../components/Navbar/NavbarPage";
 import { Card, CardGroup } from 'react-bootstrap';
+import { BiMap } from 'react-icons/bi';
 import './JobOfferPage.scss'
 
 const JobOffersPage = () => {
@@ -25,27 +26,44 @@ const JobOffersPage = () => {
     <>
       <h1 className="c-pageTitle" >Ofertas de trabajo</h1>
 
-      <div  className="c-mainContainer">
+      <div className="c-mainContainer">
         {jobOffers.map((item) => {
           console.log(item);
           return (
             <div>
               <div key={JSON.stringify(item)}>
                 <div className="c-container">
-                <CardGroup>
-                <Link className="c-linkJobOffer" to={{ pathname: "/joboffer/" + item._id }}>
-                <Card style={{ width: '16rem' }}>
-                  <Card.Body>
-                    <Card.Title className="c-jobOfferTitle">{item.jobInformation.jobTitle}</Card.Title>
-                    <Card.Text className="c-cardText" >{item.jobInformation.jobTitle}</Card.Text>
-                    <Card.Text className="c-cardText" >Vacantes: {item.jobInformation.vacancyNumbers}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Link>
-              </CardGroup>
-              </div>
-            
-                
+                  <CardGroup>
+                    <Link className="c-linkJobOffer" to={{ pathname: "/joboffer/" + item._id }}>
+                      <Card style={{ width: '16rem' }}>
+                        <Card.Body>
+                          <Card.Title className="c-jobOfferTitle">{item.jobInformation.jobTitle}</Card.Title>
+                          <Card.Text className="c-cardText" >Vacantes: {item.jobInformation.vacancyNumbers}</Card.Text>
+                        </Card.Body>
+                        <div className="c-cardHalf">
+                          <Card.Text className="c-cardText" ><BiMap />{item.jobInformation.city}</Card.Text>
+                          <p> 02/07/2019</p>
+                        </div>
+                        <div className="c-cardFooter">
+                          <div className="c-cardFooter--section">
+                            <p className="c-cardNumber">0</p>
+                            <p>Inscritos</p>
+                          </div>
+                          <div className="c-cardFooter--section">
+                            <p className="c-cardNumber">0</p>
+                            <p>En proceso</p>
+                          </div>
+                          <div className="c-cardFooter--section">
+                            <p className="c-cardNumber">0</p>
+                            <p>Finalistas</p>
+                          </div>
+                        </div>
+                      </Card>
+                    </Link>
+                  </CardGroup>
+                </div>
+
+
               </div>
             </div>
 

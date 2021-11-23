@@ -36,3 +36,26 @@
 .card{
     border:2px solid black;
 }
+
+.c-cardHalf{
+    display: flex;
+    justify-content: space-around;
+    color: rgb(13, 32, 42);
+}
+.c-cardFooter{
+    display: flex;
+    justify-content: center;
+}
+
+.c-cardFooter--section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.2rem;
+    color: rgb( 13, 32, 42);
+}
+
+.c-cardNumber{
+    display: flex;
+    justify-content: center;
+}
