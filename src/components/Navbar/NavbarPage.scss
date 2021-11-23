@@ -10,7 +10,10 @@
     border-radius: 14px;
     background-color: rgb( 255, 255, 255);
 }
-
+.c-containerLink{
+    display: flex;
+    flex-direction: column;
+}
 .c-linkNav{
     text-decoration: none;
     font-family: 10px;
