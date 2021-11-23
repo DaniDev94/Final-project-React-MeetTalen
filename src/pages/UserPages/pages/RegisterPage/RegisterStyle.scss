@@ -1,0 +1,42 @@
+.c-container-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.b-title-create {
+    &__text {
+        color: #0d202a;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+}
+
+.b-form-register {
+    &__input {
+        display: flex;
+        flex-direction: column;
+        label {
+            color: #2b81a8;
+            font-size: 14px;
+            font-family: "Montserrat", sans-serif;
+            margin: 0.7rem 0 0 1.8rem;
+        }
+    }
+}
+
+.b-form-register-file {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    // &__icon{
+    // }
+}
+
+.b-form-check {
+    display: flex;
+    justify-content: start ;
+}
