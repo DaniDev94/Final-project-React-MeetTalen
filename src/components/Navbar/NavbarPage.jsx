@@ -12,16 +12,16 @@ const Navbar = () => {
   return (
     <div className='c-containerNavbar'>
       <div className="c-containerLink">
-        <Link className='c-linkNav' to="/profile">Perfil <BiHomeAlt className="c-iconNavbar " /> </Link>
+        <Link className='c-linkNav' to="/profile"><BiHomeAlt className="c-iconNavbar" />  Perfil</Link>
       </div>
       <div className="c-containerLink">
-        <Link className='c-linkNav' to="/candidates">Candidatos <BsPeople className="c-iconNavbar" /> </Link>
+        <Link className='c-linkNav' to="/candidates"><BsPeople className="c-iconNavbar" /> Candidatos</Link>
       </div>
       <div className="c-containerLink">
-        <Link className='c-linkNav' to="/joboffer/create">Crear <AiOutlinePlusSquare className="c-iconNavbar" /> </Link>
+        <Link className='c-linkNav' to="/joboffer/create"> <AiOutlinePlusSquare className="c-iconNavbar" /> Crear </Link>
       </div>
       <div className="c-containerLink">
-        <Link className='c-linkNav' to="/joboffer">Ofertas <RiShoppingBagLine className="c-iconNavbar" /></Link>
+        <Link className='c-linkNav' to="/joboffer"><RiShoppingBagLine className="c-iconNavbar" /> Ofertas </Link>
       </div>
     </div>
   );

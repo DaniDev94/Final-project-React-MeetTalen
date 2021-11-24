@@ -13,7 +13,10 @@
 .c-containerLink{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
+
 .c-linkNav{
     text-decoration: none;
     font-family: 10px;
@@ -27,10 +30,11 @@
 
 .c-iconNavbar{
     color: rgb(11, 79, 110);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 50px;
+    height: 23px;
+    margin: 0px auto;
 }
+
 
 .c-iconNavbar:hover{
     font-weight: bold;
