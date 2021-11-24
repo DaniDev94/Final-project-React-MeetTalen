@@ -4,6 +4,8 @@ import Navbar from '../../components/Navbar/NavbarPage';
 import { Link } from "react-router-dom";
 import { Card, Image } from 'react-bootstrap';
 import { BiMap } from 'react-icons/bi';
+import { Helmet } from "react-helmet";
+import { Avatar } from "@mui/material";
 import './CandidatePage.scss'
 
 
@@ -47,12 +49,20 @@ const CandidatePage = () => {
             <div className="c-mainContainer">
                 {candidate.map(item => {
                     return (
-                        <div >
+                        <div>
                             <div key={JSON.stringify(item)}>
                                 <div>
-                                    <div className="c-container">
-                                        <Card className="c-cardContainer">
-                                            <Card.Img className="c-imgCandidate" variant="top" src={item.image} />
+                                    <Helmet>
+                                        <style>{'body { background-color: rgb( 13, 32, 42) }'}</style>
+                                    </Helmet>
+                                    <div className="c-cardContainer">
+                                        <Card>
+
+                                            <Avatar
+                                                alt="Remy Sharp"
+                                                src={item.image}
+                                                sx={{ width: 150, height: 150 }}
+                                            />
                                             <div className="c-containerText">
                                                 <Card.Body>
                                                     <Card.Title className="c-nameText">{item.name.first}</Card.Title>
@@ -62,7 +72,7 @@ const CandidatePage = () => {
                                                 </Card.Body>
                                                 <div className="c-containerFooterCard">
                                                     <Card.Text className="c-textCard">{item.information.age}</Card.Text>
-                                                    <Card.Text className="c-textCard">{item.information.address.locality} <BiMap /> </Card.Text>
+                                                    <Card.Text className="c-textCard"><BiMap /> {item.information.address.locality}  </Card.Text>
                                                 </div>
                                             </div>
                                         </Card>
@@ -70,8 +80,6 @@ const CandidatePage = () => {
                                 </div>
                             </div>
                         </div>
-
-
                     )
                 })}
 
@@ -85,4 +93,8 @@ const CandidatePage = () => {
 export default CandidatePage;
 
 
-
+{/* <Avatar
+    alt="Remy Sharp"
+    src={item.image}
+    sx={{ width: 24, height: 24 }}
+/> */}
