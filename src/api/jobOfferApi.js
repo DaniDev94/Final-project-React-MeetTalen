@@ -1,6 +1,7 @@
 import axios from "axios";
-import { JOBOFFER } from './apiRoutes';
+import { JOBOFFER, CREATE_JOBOFFER } from './apiRoutes';
 import { addToken } from "../utils/jwt";
+
 
 
 const accessToken = addToken();
@@ -18,11 +19,12 @@ const config = {
 
 export const getJobOffers = async () => {
     try {
-        const data = { "user": "6192997c2749fb5610aa239d" }
-        const req = await fetch('http://localhost:4000/joboffer', {
+        const data = localStorage.getItem('User');
+        const addKeyToUser = { user: data };
+        const req = await fetch(JOBOFFER, {
             method: "POST",
             headers: config.headers,
-            body: JSON.stringify(data)
+            body: JSON.stringify(addKeyToUser)
         })
         const res = await req.json();
         console.log(res);
@@ -32,12 +34,25 @@ export const getJobOffers = async () => {
     }
 }
 
-
-export const postJobOffers = (jobOffer) => {
+export const getJobOfferById = async (idOffer) => {
+try { 
+    const req = await axios.get(JOBOFFER + "/" + idOffer, config)
+    return req;
+} catch (error) {
+    console.error(error)
+}
+}
+export const postJobOffers = async (jobOffer) => {
     try {
-        const req = axios.post(JOBOFFER, jobOffer, config);
+        const data = localStorage.getItem('User');
+        /* const addKeyToUser = { user: data }; */
+        jobOffer.user=data
+        const req = await axios.post(CREATE_JOBOFFER, jobOffer, config);
+        console.log(req)
         return req;
     } catch (error) {
         console.error(error)
     }
 }
+
+

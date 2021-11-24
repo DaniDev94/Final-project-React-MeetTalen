@@ -1,0 +1,10 @@
+ul.control-dots {
+    top: 26.5rem;
+    @media (min-width: 778px) {
+        top: 1rem;
+    }
+}
+
+p.carousel-status {
+    visibility: hidden
+}

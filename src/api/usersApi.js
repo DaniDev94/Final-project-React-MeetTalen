@@ -32,5 +32,5 @@ export const loginUser = async (user) => {
 
 //Lamas a la función donde quieras para hacer la función logout(añadir en componente de página profile)
 export const logoutUser = () => {
-    localStorage.setItem('token', '')
+    localStorage.clear()
 }

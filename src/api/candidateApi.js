@@ -1,4 +1,4 @@
-import { CANDIDATE } from './apiRoutes';
+import { CANDIDATE , CANDIDATE_ID} from './apiRoutes';
 import axios from "axios";
 import { addToken } from "../utils/jwt";
 
@@ -21,6 +21,19 @@ export const getCandidates = async () => {
         return req;
     } catch (error) {
         console.log(error);
+    }
+}
+
+export const postCandidates = async (candidate) => {
+    try {
+        const data = localStorage.getItem('User');
+        /* const addKeyToUser = { user: data }; */
+        candidate.user=data
+        const req = await axios.post(CANDIDATE_ID, candidate, config);
+        console.log(req)
+        return req;
+    } catch (error) {
+        console.error(error)
     }
 }
 

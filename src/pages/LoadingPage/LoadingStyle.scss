@@ -1,0 +1,15 @@
+.c-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__load {
+        margin-top: 5rem;
+        @media (min-width: 778px) {
+            margin-top: 10rem;
+        }
+    }
+    &__img {
+        margin-top: 2rem;
+    }
+}

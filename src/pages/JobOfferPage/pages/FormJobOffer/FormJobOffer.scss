@@ -1,0 +1,53 @@
+.c-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+.c-title{
+    font-family : Montserrat;
+    font-weight: 300;
+}
+.c-conditions{
+    color : blue;
+    font-family : Montserrat;
+}
+.c-row{
+    padding: 0.8em;
+    border-radius: 20%;
+    
+    border-radius: 0.5rem;
+    font-family : Montserrat, sans-serif;
+    height: '2.88rem';
+    width: '18rem';
+    
+}
+.c-input{
+    border-radius: 4px;
+    width: 15em;
+    height: 2em;
+    &:hover{
+        box-shadow: 11px 6px 5px rgb(92, 89, 89) ;
+        opacity: 0.5;
+    }
+}
+.c-Text{
+    background-color: white;
+    border :green;
+    border-radius: 8%;
+}
+.c-back{
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+    align-items: baseline;
+    margin-right: 3em;
+    
+}
+
+
+.c-black{
+    margin-top: 1.78em;
+}
