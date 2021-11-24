@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(248, 250, 251);
 }
 .c-container{
     display: flex;
@@ -42,6 +43,13 @@
     justify-content: space-around;
     color: rgb(13, 32, 42);
 }
+
+.c-slider{
+    display: flex;
+    justify-content: center;
+    color: royalblue;
+}
+
 .c-cardFooter{
     display: flex;
     justify-content: center;

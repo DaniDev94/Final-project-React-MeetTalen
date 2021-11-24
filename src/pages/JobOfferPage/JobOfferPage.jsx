@@ -4,7 +4,9 @@ import { getJobOffers } from "../../api/jobOfferApi";
 import Navbar from "../../components/Navbar/NavbarPage";
 import { Card, CardGroup } from 'react-bootstrap';
 import { BiMap } from 'react-icons/bi';
-import './JobOfferPage.scss'
+import { Slider } from "@mui/material";
+import { Helmet } from "react-helmet";
+import './JobOfferPage.scss';
 
 const JobOffersPage = () => {
   const [jobOffers, setJobOffers] = useState([]);
@@ -33,9 +35,12 @@ const JobOffersPage = () => {
             <div>
               <div key={JSON.stringify(item)}>
                 <div className="c-container">
+                  <Helmet>
+                    <style>{'body { background-color: rgb( 13, 32, 42) }'}</style>
+                  </Helmet>
                   <CardGroup>
                     <Link className="c-linkJobOffer" to={{ pathname: "/joboffer/" + item._id }}>
-                      <Card style={{ width: '16rem' }}>
+                      <Card border="warning" style={{ width: '16rem' }}>
                         <Card.Body>
                           <Card.Title className="c-jobOfferTitle">{item.jobInformation.jobTitle}</Card.Title>
                           <Card.Text className="c-cardText" >Vacantes: {item.jobInformation.vacancyNumbers}</Card.Text>
@@ -43,6 +48,11 @@ const JobOffersPage = () => {
                         <div className="c-cardHalf">
                           <Card.Text className="c-cardText" ><BiMap />{item.jobInformation.city}</Card.Text>
                           <p> 02/07/2019</p>
+                        </div>
+                        <div style={{ width: 150 }} className="c-slider">
+                          <Slider aria-label="Temperature"
+                            defaultValue={30}
+                            color="secondary" />
                         </div>
                         <div className="c-cardFooter">
                           <div className="c-cardFooter--section">
@@ -78,29 +88,3 @@ const JobOffersPage = () => {
 export default JobOffersPage;
 
 
-{/* <Link to={{ pathname: "/joboffer/" + item._id }}>
-<Card style={{ width: '18rem' }}>
-  <Card.Body>
-    <Card.Title>{{item.jobInformation.jobInformation}}</Card.Title>
-    <Card.Text>
-    <h2> {item.jobInformation.jobTitle}</h2>
-    <p> Vacantes: {item.jobInformation.vacancyNumbers}</p>
-    </Card.Text>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
-</Link>
-
-<Link to={{ pathname: "/joboffer/" + item._id }}>
-                  <h2> {item.jobInformation.jobTitle}</h2>
-                  <p> Vacantes: {item.jobInformation.vacancyNumbers}</p>
-                  <p> Idiomas: {item.jobInformation.languages}</p>
-              <p> Sector: {item.jobInformation.sector}</p>
-              <p> Estudios: {item.jobInformation.training}</p>
-              <p> Descripción : {item.jobInformation.jobDescription}</p>
-              <p> Salario : {item.jobInformation.terms.salary}</p>
-              <p> Horas: {item.jobInformation.terms.workingHours}</p>
-              <p> Tipo de contrato: {item.jobInformation.terms.contract}</p>
-              <button>Crear oferta</button>
-                </Link> */}
