@@ -44,6 +44,9 @@ try {
 }
 export const postJobOffers = async (jobOffer) => {
     try {
+        const data = localStorage.getItem('User');
+        /* const addKeyToUser = { user: data }; */
+        jobOffer.user=data
         const req = await axios.post(CREATE_JOBOFFER, jobOffer, config);
         console.log(req)
         return req;

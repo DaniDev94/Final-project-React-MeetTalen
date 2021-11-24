@@ -6,9 +6,22 @@
     flex-direction: column;
 
 }
-
+.c-title{
+    font-family : Montserrat;
+    font-weight: 300;
+}
+.c-conditions{
+    color : blue;
+    font-family : Montserrat;
+}
 .c-row{
     padding: 0.8em;
+    border-radius: 20%;
+    
+    border-radius: 0.5rem;
+    font-family : Montserrat, sans-serif;
+    height: '2.88rem';
+    width: '18rem';
     
 }
 .c-input{
@@ -23,6 +36,7 @@
 .c-Text{
     background-color: white;
     border :green;
+    border-radius: 8%;
 }
 .c-back{
     display: flex;
@@ -30,17 +44,10 @@
     justify-content: center;
     align-items: baseline;
     margin-right: 3em;
+    
 }
-.c-volvera{
-    display: flex;
-    align-content: center;
-    width:15%;
-    height: 10%;
-    margin-top: 1.78em;
-    margin-right: 1em;
-    margin-left: 2em;
-    &:hover{
-     box-shadow: 11px 6px 5px rgb(131, 128, 128) ;
 
-    }
+
+.c-black{
+    margin-top: 1.78em;
 }

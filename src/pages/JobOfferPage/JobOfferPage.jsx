@@ -34,14 +34,7 @@ const JobOffersPage = () => {
                 <Link to={{ pathname: "/joboffer/" + item._id }}>
                   <h2> {item.jobInformation.jobTitle}</h2>
                   <p> Vacantes: {item.jobInformation.vacancyNumbers}</p>
-                  {/* <p> Idiomas: {item.jobInformation.languages}</p>
-              <p> Sector: {item.jobInformation.sector}</p>
-              <p> Estudios: {item.jobInformation.training}</p>
-              <p> Descripción : {item.jobInformation.jobDescription}</p>
-              <p> Salario : {item.jobInformation.terms.salary}</p>
-              <p> Horas: {item.jobInformation.terms.workingHours}</p>
-              <p> Tipo de contrato: {item.jobInformation.terms.contract}</p>
-              <button>Crear oferta</button> */}
+                  
                 </Link>
               </div>
             </div>

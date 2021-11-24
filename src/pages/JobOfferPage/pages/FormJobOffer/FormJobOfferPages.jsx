@@ -11,6 +11,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useNavigate } from "react-router";
 import { ChevronLeftIcon } from '@chakra-ui/icons'
+import ButtonDark from "../../../../components/ButtonDark/ButtonDark"
 
 
 const FormJobOffers = () => {
@@ -49,17 +50,17 @@ const FormJobOffers = () => {
     <>
       <Helmet>
 
-        <style>{'body { background-color: #d9d9db; }'}</style>
+        <style>{'body { background-color: #eaeaeb }'}</style>
 
       </Helmet>
       <div className="c-back">
 
         <ChevronLeftIcon className="c-back" onClick={() => { navigate('/joboffer') }}></ChevronLeftIcon>
-        <h2>Descripción de la oferta</h2>
+        <h2 className="c-title" >Descripción de la oferta</h2>
 
       </div>
       <form className="c-form" onSubmit={handleSubmit(submit)}>
-        <label className="c-row" htmlFor="oferta"></label>
+        <label  htmlFor="oferta"></label>
         <TextField className="c-Text" id="outlined-basic" label="Oferta" variant="outlined" {...register("jobInformation.jobTitle")} />
         <label className="c-row" htmlFor="languages"></label>
         <TextField className="c-Text" id="outlined-basic" label="Idiomas" variant="outlined" {...register("jobInformation.languages")} />
@@ -100,28 +101,27 @@ const FormJobOffers = () => {
           >
             <MenuItem value="Grado Medio" >Grado Medio</MenuItem>
             <MenuItem value="Grado Superior">Grado Superior</MenuItem>
-            <MenuItem value="Grado Superior">Grado Superior</MenuItem>
             <MenuItem value="Master">Master</MenuItem>
             <MenuItem value="Licenciatura">Licenciatura</MenuItem>
             <MenuItem value="Sin formación">Sin formación</MenuItem>
           </Select>
         </FormControl>
 
-
+        <p className ="c-conditions">Condiciones</p>
         <label className="c-row" htmlFor="jobDescription"></label>
-        <TextField className="c-Text" id="outlined-basic" label="Condiciones laborales" variant="outlined" {...register("jobInformation.jobDescription")} />
+        <TextField className="c-Text" id="outlined-basic" label="Información" variant="outlined" {...register("jobInformation.jobDescription")} />
 
-        <label className="c-row" htmlFor="salary"></label>
-        <TextField className="c-Text" id="outlined-basic" label="Salario" variant="outlined"{...register("jobInformation.salary")} />
+        <label className="c-row" htmlFor="terms.salary"></label>
+        <TextField className="c-Text" id="outlined-basic" label="Salario" variant="outlined"{...register("jobInformation.terms.salary")} />
 
-        <label className="c-row" htmlFor="workingHours"></label>
-        <TextField className="c-Text" id="outlined-basic" label="Horas" variant="outlined"  {...register("jobInformation.workingHours")} />
+        <label className="c-row" htmlFor="terms.workingHours"></label>
+        <TextField className="c-Text" id="outlined-basic" label="Horas" variant="outlined"  {...register("jobInformation.terms.workingHours")} />
 
-        <label className="c-row" htmlFor="contract"></label>
-        <TextField className="c-Text" id="outlined-basic" label="Tipo de contrato" variant="outlined" {...register("jobInformation.contract")} />
+        <label className="c-row" htmlFor="terms.contract"></label>
+        <TextField className="c-Text" id="outlined-basic" label="Tipo de contrato" variant="outlined" {...register("jobInformation.terms.contract")} />
 
         <div>
-          <input type="submit" value="Continuar" />
+          <button className="c-black" style={{ backgroundColor: 'transparent', border: 'none' }}   type="submit" value="Continuar"> <ButtonDark></ButtonDark></button>
         </div>
       </form>
 
