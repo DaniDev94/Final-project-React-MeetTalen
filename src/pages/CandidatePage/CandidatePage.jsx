@@ -92,9 +92,3 @@ const CandidatePage = () => {
 
 export default CandidatePage;
 
-
-{/* <Avatar
-    alt="Remy Sharp"
-    src={item.image}
-    sx={{ width: 24, height: 24 }}
-/> */}
