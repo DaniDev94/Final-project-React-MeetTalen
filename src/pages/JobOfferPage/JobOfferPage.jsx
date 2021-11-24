@@ -25,11 +25,11 @@ const JobOffersPage = () => {
     
       <h1>Ofertas de trabajo</h1>
 
-      <div>
+      <div className="c-mainContainer">
         {jobOffers.map((item) => {
           console.log(item);
           return (
-            <div className="card">
+            <div>
               <div key={JSON.stringify(item)}>
                 <Link to={{ pathname: "/joboffer/" + item._id }}>
                   <h2> {item.jobInformation.jobTitle}</h2>
@@ -48,3 +48,5 @@ const JobOffersPage = () => {
 };
 
 export default JobOffersPage;
+
+
