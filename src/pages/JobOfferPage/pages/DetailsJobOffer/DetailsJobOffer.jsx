@@ -34,30 +34,46 @@ const DetailsJobOffer = () => {
 
     return (
         <>
-         <Helmet>
+        <div>Details
 
-<style>{'body { background-color:#0d202a}'}</style>
+<h3>Candidatos</h3>
+        <img src={id.image} alt= "{id.name}"/>
+        <h1>{id.name.first} {id.name.last}</h1>
+        <h2>{id.profession}</h2>
+        <div>
+        <i className="pi-twitter" style={{'fontSize': '2em'}}></i>   
+        <i className="pi-instagram" style={{'fontSize': '2em'}}></i>   
+        <i className="pi-facebook" style={{'fontSize': '2em'}}></i>   
+        </div>
+        <h2>Datos personales</h2>
+        <div>
+        <i className="pi-calendar" style={{'fontSize': '2em'}}></i> 
+        <p>{id.information.age}</p>
+        </div>
+        <div>
+        <i className="pi-map-marker" style={{'fontSize': '2em'}}></i>
+        <p>{id.information.adress.community},{id.information.adress.locality}, {id.information.adress.pc}</p>
+        </div>
+        <div>
+        <i className="pi-phone" style={{'fontSize': '2em'}}></i>
+        <p>{id.information.phone}</p>
+        </div>
 
-</Helmet>
-
-<h2 className= "d-infor" >Detalles de la oferta</h2>
-        <div className = "d-details">
+        <h2>Palabra clave del perfil</h2>
+        <p>{id.keywords[0]}</p>
+        <p>{id.keywords[1]}</p>
+        <p>{id.keywords[2]}</p>
+        <p>{id.keywords[3]}</p>
+        <p>{id.keywords[4]}</p>
+        <p>{id.keywords[5]}</p>
         
+        <h2>Formación académica</h2>
+        <p>{id.training.type}</p>
+        <p>{id.training.name}</p>
+        <p>{id.training.center}</p>
+
         
-       <h3 className= "d-info" >{details && details.jobInformation.jobTitle}</h3>
-       <p className= "d-inf"> <strong>Ciudad : </strong>  {details && details.jobInformation.city}</p>
-       <p className= "d-inf"> <strong>Vacantes : </strong>  {details && details.jobInformation.vacancyNumbers}</p>
-       <p className= "d-inf" > <strong> Idiomas : </strong>  {details && details.jobInformation.languages}</p>
-       <p className= "d-inf"> <strong>Sector : </strong>{details && details.jobInformation.sector}</p>
-       <p className= "d-inf"><strong>Estudios : </strong>{details && details.jobInformation.training}</p>
-       <p className= "d-inf"><strong>Funciones : </strong> {details && details.jobInformation.jobDescription}</p>
-       <p className= "d-inf"><strong>Salario : </strong>{details && details.jobInformation.terms.salary}€</p>
-       <p className= "d-inf"><strong>Jornada : </strong>{details && details.jobInformation.terms.workingHours}</p>
-       <p className= "d-inf"><strong>Contrato : </strong>{details && details.jobInformation.terms.contract}</p>
-
-
-       {/* {details ? {details && <p>details.jobinformation.ciyt</p>}} */}
-       </div>
+        </div>
         <Navbar></Navbar>
         </>
     )

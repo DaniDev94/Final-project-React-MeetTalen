@@ -16,7 +16,6 @@ const config = {
     }
 }
 
-
 export const getJobOffers = async () => {
     try {
         const data = localStorage.getItem('User');
