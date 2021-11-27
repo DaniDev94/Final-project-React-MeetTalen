@@ -55,8 +55,6 @@ const DetailsJobOffer = () => {
        <p className= "d-inf"><strong>Jornada : </strong>{details && details.jobInformation.terms.workingHours}</p>
        <p className= "d-inf"><strong>Contrato : </strong>{details && details.jobInformation.terms.contract}</p>
 
-
-       {/* {details ? {details && <p>details.jobinformation.ciyt</p>}} */}
        </div>
         <Navbar></Navbar>
         </>
