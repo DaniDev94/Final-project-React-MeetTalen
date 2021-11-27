@@ -4,6 +4,8 @@ const CREATE_JOBOFFER = `${JOBOFFER}/create`;
 const JOBOFFER_ID = `${JOBOFFER}/:id`;
 const CANDIDATE = `${BASE_URL}/candidates`;
 const CANDIDATE_ID = `${CANDIDATE}/:id`;
+const CANDIDATE_NAME = `${CANDIDATE}/:name`;
+
 const USERS = `${BASE_URL}/users`;
 const LOGIN = `${USERS}/login`;
 
@@ -14,5 +16,6 @@ export {
     LOGIN,
     CREATE_JOBOFFER,
     JOBOFFER_ID,
-    CANDIDATE_ID
+    CANDIDATE_ID,
+    CANDIDATE_NAME
 };

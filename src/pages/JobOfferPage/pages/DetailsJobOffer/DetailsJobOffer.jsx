@@ -72,8 +72,7 @@ const DetailsJobOffer = () => {
         <p>{id.training.name}</p>
         <p>{id.training.center}</p>
 
-        
-        </div>
+       </div>
         <Navbar></Navbar>
         </>
     )

@@ -70,6 +70,7 @@ const CandidatePage = () => {
                                             src={item.image}
                                             sx={{ width: 150, height: 150 }}
                                         />
+                                        <Link className="c-linkcandidate" to={{ pathname: "/candidates/" + item.name.first }}>
                                         <Card className="c-cardBodyContainer">
                                             <div className="c-containerText">
                                                 <Card.Body>
@@ -84,6 +85,7 @@ const CandidatePage = () => {
                                                 </div>
                                             </div>
                                         </Card>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -99,4 +101,3 @@ const CandidatePage = () => {
 
 
 export default CandidatePage;
-

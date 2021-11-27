@@ -12,6 +12,7 @@ import CandidatePage from "./pages/CandidatePage/CandidatePage";
 import JobOffersPage from "./pages/JobOfferPage/JobOfferPage";
 import FormJobOffers from "./pages/JobOfferPage/pages/FormJobOffer/FormJobOfferPages";
 import DetailsJobOffer from "./pages/JobOfferPage/pages/DetailsJobOffer/DetailsJobOffer";
+import DetailsCandidate from "./pages/CandidatePage/CandidateDetailPage";
 
 
 function App() {
@@ -24,12 +25,16 @@ function App() {
           <Route path="login" element={<Loadingpage></Loadingpage>} />
           <Route path="register" element={<RegisterPage></RegisterPage>} />
           <Route path="profile" element={<ProfilePage></ProfilePage>} />
-          <Route path="candidates" element={<CandidatePage></CandidatePage>} />
+          <Route path ="candidates">
+          <Route index element ={<CandidatePage></CandidatePage>} />
+          <Route path=":name" element={<DetailsCandidate></DetailsCandidate>} />
+          </Route>
           <Route path="joboffer">
             <Route index element={<JobOffersPage></JobOffersPage>} />
             <Route path="create" element={<FormJobOffers></FormJobOffers>} />
             <Route path=":id" element={<DetailsJobOffer></DetailsJobOffer>} />
           </Route>
+        
         </Route>
       </Routes>
     </div>
