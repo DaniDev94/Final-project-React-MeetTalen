@@ -176,7 +176,7 @@ export default function RegisterPage() {
                                                 },
                                             },
                                             pattern: {
-                                                value: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\ .'-]{8,20}$/,
+                                                value: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\ .'-]{2,20}$/,
                                                 message: {
                                                     nameOne: "Debe contener entre 8-20 caracteres",
                                                     nameTwo: "No puede contener caracteres especiales salvo: .'-"
