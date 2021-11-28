@@ -23,7 +23,7 @@ export default function WelcomePage() {
                         <p className='b-paragraph__text'>Atrae y enamora a los mejores candidatos</p>
                     </div>
                     <div onClick={() => { navigate('/login') }} className='b-button'>
-                        <ButtonLigth onClick={() => { navigate('/login') }}></ButtonLigth>
+                        <ButtonLigth></ButtonLigth>
                     </div>
                 </div>
             </div>
