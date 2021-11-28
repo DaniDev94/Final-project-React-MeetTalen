@@ -1,45 +1,33 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { postJobOffers } from "../../../../api/jobOfferApi";
-import '../FormJobOffer/FormJobOffer.scss'
-import { Helmet } from "react-helmet";
-import Navbar from "../../../../components/Navbar/NavbarPage";
-import TextField from '@mui/material/TextField';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import { useNavigate } from "react-router";
-import { ChevronLeftIcon } from '@chakra-ui/icons'
-import ButtonDark from "../../../../components/ButtonDark/ButtonDark"
 
+
+import Navbar from "../../../../components/Navbar/NavbarPage";
 
 const FormJobOffers = () => {
   const { register, handleSubmit } = useForm();
-  const navigate = useNavigate();
-
+  
   const submit = (data) => {
-    console.log(data.salary)
-    const terms = {
-      salary: data.salary,
-      workingHours: data.workingHours,
-      contract: data.contract
-    }
-
-    let job = {}
-    job.jobInformation = data.jobInformation
-    /* job.user= User  */
-
-    console.log(job)
-    addJoboffer(job)
+    
+    const formData = new FormData();
+    formData.append("jobTitle", data.jobTitle);
+    formData.append("vacancyNumbers", data.vacancyNumbers);
+    formData.append("languages", data.languages);
+    formData.append("sector", data.sector);
+    formData.append("training", data.training);
+    formData.append("jobDescription", data.jobDescription);
+    formData.append("terms", data.terms.salary);
+    formData.append("terms", data.terms.workingHours);
+    formData.append("terms", data.terms.contract);
+ 
+    addJoboffer(formData);
   };
 
   const addJoboffer = async (jobOffer) => {
     try {
       const newJobOffer = await postJobOffers(jobOffer);
       if (newJobOffer) {
-        console.log('Oferta creada')
-        navigate('/joboffer')
       }
     } catch (error) {
       console.error(error);
