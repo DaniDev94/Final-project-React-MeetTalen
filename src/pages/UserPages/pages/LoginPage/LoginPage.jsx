@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './LoginStyle.scss';
 import ButtonLigth from '../../../../components/ButtonLigth/ButtonLigth';
-import { Helmet } from 'react-helmet';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../../../../api/usersApi';
-import { IconButton, InputAdornment, OutlinedInput, TextField } from '@mui/material';
+import { createTheme, IconButton, InputAdornment, OutlinedInput, TextField } from '@mui/material';
 import { Box } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { ThemeProvider } from '@mui/private-theming';
 
 
 export default function LoginPage() {
@@ -54,16 +54,29 @@ export default function LoginPage() {
         event.preventDefault();
     };
 
+
+    //Breakpoints (Media queries - mui)
+    const theme = createTheme({
+        breakpoints: {
+            values: {
+                mobile: 576,
+                desktop: 778,
+            },
+        },
+    });
+
+
     return (
         <>
             <div className='c-content'>
-                <div  className='b-card'>
+                <div className='b-card'>
                     <div className='b-img-login'>
                         <img className='b-img-login__image' src="images/logo-layout/group7.png" alt="Logo" />
                     </div>
                     <form className='b-form' onSubmit={handleSubmit(submint)}>
+                    <ThemeProvider theme={theme}>
                         <Box component="form" sx={{
-                            '& .MuiTextField-root': { m: 1, width: '18rem' },
+                            '& .MuiTextField-root': { m: 1, width: { mobile: '18rem', desktop: '27rem' } },
                             '& .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input': { backgroundColor: '#ffffff', borderRadius: '0.5rem', fontFamily: '"Montserrat", sans-serif', height: '0.7rem' }
                         }}
                             noValidate
@@ -78,7 +91,7 @@ export default function LoginPage() {
                             <div className='b-form__content'>
                                 <label htmlFor='password'>Contraseña</label>
                                 <OutlinedInput
-                                    sx={{ backgroundColor: '#ffffff', borderRadius: '0.5rem', fontFamily: '"Montserrat", sans-serif', height: '2.88rem', width: '18rem', m: 1 }}
+                                    sx={{ backgroundColor: '#ffffff', borderRadius: '0.5rem', fontFamily: '"Montserrat", sans-serif', height: '2.88rem', width: { mobile: '18rem', desktop: '27rem' }, m: 1 }}
                                     id="outlined-adornment-password"
                                     type={values.showPassword ? 'text' : 'password'}
                                     autoComplete="current-password"
@@ -100,6 +113,7 @@ export default function LoginPage() {
                                 />
                             </div>
                         </Box>
+                        </ThemeProvider>
                         <div className='b-button-submit'>
                             <button style={{ backgroundColor: 'transparent', border: 'none' }} type='submit'><ButtonLigth></ButtonLigth></button>
                         </div>
