@@ -9,6 +9,7 @@
 .c-title{
     font-family : Montserrat;
     font-weight: 300;
+    color: #2b81a8
 }
 .c-conditions{
     color : blue;
@@ -50,6 +51,8 @@
 
 .b-form {
     margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
     &__content {
         display: flex;
         flex-direction: column;
@@ -58,7 +61,7 @@
             margin-bottom: 1rem;
         }
         label {
-            color: #ffffffc5;
+            color: #2b81a8;
             font-size: 12px;
             font-family: "Montserrat", sans-serif;
             margin: 0 0 0.5rem 1.8rem;
@@ -67,4 +70,14 @@
             }
         }
     }
+}
+.c-Text{
+    display: flex;
+    flex-direction: column;
+    color:#2b81a8;
+}
+.FormLabel{
+    display: flex;
+    flex-direction: column;
+    
 }
