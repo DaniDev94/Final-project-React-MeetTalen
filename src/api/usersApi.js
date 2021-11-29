@@ -11,6 +11,16 @@ const config = {
 }
 
 
+export const getUserById = async (id) => {
+    try {
+        const reqInDb = await axios.post(USERS + '/' + id, config);
+        return reqInDb;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+
 export const registerUser = async (user) => {
     try {
         const reqInDb = await axios.post(USERS, user, config);
