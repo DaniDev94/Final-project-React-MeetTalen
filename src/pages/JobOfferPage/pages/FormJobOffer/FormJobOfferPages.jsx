@@ -68,6 +68,7 @@ const FormJobOffers = () => {
       <div className="f-back">
 
         <ChevronLeftIcon className="f-back" onClick={() => { navigate('/joboffer') }}></ChevronLeftIcon>
+        
         <h2 className="f-title" >Descripción de la oferta</h2>
 
       </div>

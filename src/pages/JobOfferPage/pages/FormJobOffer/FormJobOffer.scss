@@ -72,12 +72,15 @@
     }
 }
 .f-Text{
-    display: flex;
-    flex-direction: column;
+    
     color:#2b81a8;
-    font-size: 12px;
+    font-size:calc(1.325rem + .7vw);
             font-family: "Montserrat", sans-serif;
-            margin: 0 0 0.5rem -3.2rem;}
+            margin-top: 10rem;
+           /*  margin: 2 0 0.5rem -3.2rem; */
+            @media (min-width: 778px) {
+                font-size: 14px;}
+            }
 .FormLabel{
     display: flex;
     flex-direction: column;
@@ -92,3 +95,6 @@
 .labin{
     margin-left: -2em;
 } 
+.valui{
+    padding-right: 0;
+}
