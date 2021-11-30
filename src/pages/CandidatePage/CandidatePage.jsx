@@ -56,8 +56,8 @@ const CandidatePage = () => {
                                         <style>{'body { background-color: rgb( 13, 32, 42) }'}</style>
                                     </Helmet>
                                     <div className="c-cardContainer">
+                                    <Link className="c-linkcandidate" to={{ pathname: "/candidates/" + item.name.first }}>
                                         <Card>
-
                                             <Avatar
                                                 alt="Remy Sharp"
                                                 src={item.image}
@@ -76,6 +76,7 @@ const CandidatePage = () => {
                                                 </div>
                                             </div>
                                         </Card>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

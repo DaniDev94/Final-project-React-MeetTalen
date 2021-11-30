@@ -9,6 +9,7 @@
 .c-title{
     font-family : Montserrat;
     font-weight: 300;
+    color: #2b81a8
 }
 .c-conditions{
     color : blue;
@@ -33,11 +34,7 @@
         opacity: 0.5;
     }
 }
-.c-Text{
-    background-color: white;
-    border :green;
-    border-radius: 8%;
-}
+
 .c-back{
     display: flex;
     align-content: space-around;
@@ -50,4 +47,37 @@
 
 .c-black{
     margin-top: 1.78em;
+}
+
+.b-form {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.5rem;
+        @media (min-width: 778px) {
+            margin-bottom: 1rem;
+        }
+        label {
+            color: #2b81a8;
+            font-size: 12px;
+            font-family: "Montserrat", sans-serif;
+            margin: 0 0 0.5rem 1.8rem;
+            @media (min-width: 778px) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+.c-Text{
+    display: flex;
+    flex-direction: column;
+    color:#2b81a8;
+}
+.FormLabel{
+    display: flex;
+    flex-direction: column;
+    
 }
