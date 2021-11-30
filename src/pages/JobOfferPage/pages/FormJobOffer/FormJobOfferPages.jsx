@@ -65,42 +65,42 @@ const FormJobOffers = () => {
         <style>{'body { background-color: #eaeaeb }'}</style>
 
       </Helmet>
-      <div className="c-back">
+      <div className="f-back">
 
-        <ChevronLeftIcon className="c-back" onClick={() => { navigate('/joboffer') }}></ChevronLeftIcon>
-        <h2 className="c-title" >Descripción de la oferta</h2>
+        <ChevronLeftIcon className="f-back" onClick={() => { navigate('/joboffer') }}></ChevronLeftIcon>
+        <h2 className="f-title" >Descripción de la oferta</h2>
 
       </div>
-      <form className='b-form' onSubmit={handleSubmit(submit)}>
+      <form className='f-format' onSubmit={handleSubmit(submit)}>
         <ThemeProvider theme={theme}>
           <Box component="form" sx={{
             '& .MuiTextField-root': { m: 1, width: '18rem' },
-            '& .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input': { backgroundColor: '#ffffff', borderRadius: '0.5rem', fontFamily: '"Montserrat", sans-serif', height: '0.7rem' }
+            '& .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input': {  borderRadius: '0.5rem', fontFamily: '"Montserrat", sans-serif', height: '0.7rem' }
           }}
             noValidate
             autoComplete="on">
-            <div className='b-form__content'>
+            <div className='f-format__content'>
               <label htmlFor='oferta'>Oferta</label>
               <TextField
                 required
                 id="outlined-required"
                 name='oferta'{...register('jobInformation.jobTitle')} />
             </div>
-            <div className='b-form__content'>
+            <div className='f-format__content'>
               <label htmlFor='languages'>Idiomas</label>
               <TextField
                 required
                 id="outlined-required"
                 name='languages'{...register('jobInformation.languages')} />
             </div>
-            <div className='b-form__content'>
+            <div className='f-format__content'>
               <label htmlFor='city'>Ciudad</label>
               <TextField
                 required
                 id="outlined-required"
                 name='city'{...register('jobInformation.city')} />
             </div>
-            <div className='b-form__content'>
+            <div className='f-format__content'>
               <label htmlFor='vacancyNumbers'>Vacantes</label>
               <TextField
                 required
@@ -109,12 +109,12 @@ const FormJobOffers = () => {
             </div>
             <div className="FormLabel">
             <FormControl sx={{ m: 1.5, minWidth: 220 }}>
-              <InputLabel id="demo-simple-select-label" >Sector</InputLabel>
+            <label className="labin" htmlFor='sector'>Sector</label>
               <Select
-                className="c-Text"
+                className="f-Text"
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                label="Sector"
+                  
 
                 name="jobInformation.sector"
                 {...register("jobInformation.sector")}
@@ -125,14 +125,14 @@ const FormJobOffers = () => {
                 <MenuItem value="Ciberseguridad">Ciberseguridad</MenuItem>
               </Select>
             </FormControl>
-
+            <label className="labin" htmlFor='sector'>Estudios</label>
             <FormControl sx={{ m: 1.5, minWidth: 220 }}>
-              <InputLabel id="demo-simple-select-label" >Estudios</InputLabel>
+              
               <Select
-                className="c-Text"
+                className="f-Text"
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                label="Estudios"
+               
 
                 name="jobInformation.training"
                 {...register("jobInformation.training")}
@@ -146,35 +146,35 @@ const FormJobOffers = () => {
               </Select>
             </FormControl>
             </div>
-            <div className='b-form__content'>
+            <div className='f-format__content'>
               <label htmlFor='jobDescription'>Condiciones</label>
               <TextField
                 required
                 id="outlined-required"
                 name='jobDescription'{...register('jobInformation.jobDescription')} />
             </div>
-            <div className='b-form__content'>
+            <div className='f-format__content'>
               <label htmlFor='vacancyNumbers'>Vacantes</label>
               <TextField
                 required
                 id="outlined-required"
                 name='vacancyNumbers'{...register('jobInformation.vacancyNumbers')} />
             </div>
-            <div className='b-form__content'>
+            <div className='f-format__content'>
               <label htmlFor='terms.salary'>Salario</label>
               <TextField
                 required
                 id="outlined-required"
                 name='terms.salary'{...register('jobInformation.terms.salary')} />
             </div>
-            <div className='b-form__content'>
+            <div className='f-format__content'>
               <label htmlFor='terms.workingHours'>Horas</label>
               <TextField
                 required
                 id="outlined-required"
                 name='terms.workingHours'{...register('jobInformation.terms.workingHours')} />
             </div>
-            <div className='b-form__content'>
+            <div className='f-format__content'>
               <label htmlFor='terms.contract'>Horas</label>
               <TextField
                 required
@@ -188,66 +188,8 @@ const FormJobOffers = () => {
           </Box>
         </ThemeProvider>
       </form>
-      {/* <form className="c-form" onSubmit={handleSubmit(submit)}> */}
 
 
-
-
-
-      {/* <FormControl sx={{ m: 1.5, minWidth: 220 }}>
-          <InputLabel id="demo-simple-select-label" >Sector</InputLabel>
-          <Select
-            className="c-Text"
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            label="Sector"
-
-            name="jobInformation.sector"
-            {...register("jobInformation.sector")}
-
-          >
-            <MenuItem value="Diseño Ux/Ui" >Diseño Ux/Ui</MenuItem>
-            <MenuItem value="Desarrollo Web">Desarrollo Web</MenuItem>
-            <MenuItem value="Ciberseguridad">Ciberseguridad</MenuItem>
-          </Select>
-        </FormControl>
-
-        <FormControl sx={{ m: 1.5, minWidth: 220 }}>
-          <InputLabel id="demo-simple-select-label" >Estudios</InputLabel>
-          <Select
-            className="c-Text"
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            label="Estudios"
-
-            name="jobInformation.training"
-            {...register("jobInformation.training")}
-
-          >
-            <MenuItem value="Grado Medio" >Grado Medio</MenuItem>
-            <MenuItem value="Grado Superior">Grado Superior</MenuItem>
-            <MenuItem value="Master">Master</MenuItem>
-            <MenuItem value="Licenciatura">Licenciatura</MenuItem>
-            <MenuItem value="Sin formación">Sin formación</MenuItem>
-          </Select>
-        </FormControl> */}
-
-
-      {/* <label className="c-row" htmlFor="terms.salary"></label>
-        <TextField className="c-Text" id="outlined-basic" label="Salario" variant="outlined"{...register("jobInformation.terms.salary")} />
-
-        <label className="c-row" htmlFor="terms.workingHours"></label>
-        <TextField className="c-Text" id="outlined-basic" label="Horas" variant="outlined"  {...register("jobInformation.terms.workingHours")} />
-
-        <label className="c-row" htmlFor="terms.contract"></label>
-        <TextField className="c-Text" id="outlined-basic" label="Tipo de contrato" variant="outlined" {...register("jobInformation.terms.contract")} />
-
-        <div>
-          <button className="c-black" style={{ backgroundColor: 'transparent', border: 'none' }}   type="submit" value="Continuar"> <ButtonDark></ButtonDark></button>
-        </div>
-      </form> */}
-
-      {/* <Navbar></Navbar> */}
     </>
   );
 };
