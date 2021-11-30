@@ -1,0 +1,115 @@
+.c-header {
+    margin-top: 3rem;
+    &__text {
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+        color: #0d202a;
+        margin: 0 0 1.8rem 0;
+    }
+}
+
+.c-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0d202a;
+    min-height: 100vh;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.b-profile-sub {
+    margin-top: 2rem;
+    @media (min-width: 778px) {
+        margin-top: 3rem;
+    }
+    &__text {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        letter-spacing: 0.1rem;
+        color: rgba(255, 255, 255, 0.26);
+        font-size: 13.8px;
+        text-transform: uppercase;
+        margin: 0;
+    }
+}
+
+.b-profile-title {
+    margin-top: 0.4rem;
+    &__text {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        letter-spacing: 0.1rem;
+        color: rgb(255, 255, 255);
+        font-size: 32px;
+        margin: 0 0 3rem 0;
+    }
+}
+
+.b-profile-img {
+    width: 6.8rem;
+    height: 6.8rem;
+    @media (min-width: 778px) {
+        width: 9rem;
+        height: 9rem;
+    }
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20rem;
+    }
+}
+
+.b-profile-ceo {
+    margin-top: 2rem;
+    @media (min-width: 778px) {
+        margin-top: 4rem;
+    }
+    &__text {
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        font-size: 17px;
+        letter-spacing: 0.1rem;
+        color: rgb(255, 255, 255);
+        margin: 0 0 0.8rem 0;
+    }
+}
+
+.b-profile-line {
+    width: 100%;
+    max-width: 80%;
+    @media (min-width: 778px) {
+        max-width: 20%;
+    }
+    &__img {
+        border-radius: 1rem;
+        border-color:rgba(0, 178, 205, 0.253) ;
+        background-color: rgba(0, 178, 205, 0.253);
+    }
+}
+
+.b-menu {
+    margin-top: 0.8rem;
+    @media (min-width: 778px) {
+        margin-top: 2rem;
+    }
+}
+
+.b-text-fake {
+    width: 14rem;
+    margin-bottom: 3rem;
+    @media (min-width: 778px) {
+        margin-bottom: 4rem;
+        margin-top: 2rem;
+    }
+    &__content {
+        font-family: "Montserrat", sans-serif;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #00ffa28c;
+    }
+}

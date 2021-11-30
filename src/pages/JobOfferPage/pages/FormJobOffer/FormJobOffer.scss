@@ -1,4 +1,4 @@
-.c-form{
+.f-form{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,15 +6,16 @@
     flex-direction: column;
 
 }
-.c-title{
+.f-title{
     font-family : Montserrat;
     font-weight: 300;
+    color: #2b81a8
 }
-.c-conditions{
+.f-conditions{
     color : blue;
     font-family : Montserrat;
 }
-.c-row{
+.f-row{
     padding: 0.8em;
     border-radius: 20%;
     
@@ -24,7 +25,7 @@
     width: '18rem';
     
 }
-.c-input{
+.f-input{
     border-radius: 4px;
     width: 15em;
     height: 2em;
@@ -33,12 +34,8 @@
         opacity: 0.5;
     }
 }
-.c-Text{
-    background-color: white;
-    border :green;
-    border-radius: 8%;
-}
-.c-back{
+
+.f-back{
     display: flex;
     align-content: space-around;
     justify-content: center;
@@ -48,6 +45,39 @@
 }
 
 
-.c-black{
+.f-black{
     margin-top: 1.78em;
+}
+
+.f-format {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.5rem;
+        @media (min-width: 778px) {
+            margin-bottom: 1rem;
+        }
+        label {
+            color: #2b81a8;
+            font-size: 12px;
+            font-family: "Montserrat", sans-serif;
+            margin: 0 0 0.5rem 1.8rem;
+            @media (min-width: 778px) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+.f-Text{
+    display: flex;
+    flex-direction: column;
+    color:#2b81a8;
+}
+.FormLabel{
+    display: flex;
+    flex-direction: column;
+    
 }

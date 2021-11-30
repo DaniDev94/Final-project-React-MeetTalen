@@ -1,5 +1,6 @@
 import axios from "axios";
 import { USERS, LOGIN } from './apiRoutes';
+import { addToken } from "../utils/jwt";
 
 
 const config = {
@@ -7,6 +8,18 @@ const config = {
         "Accept": "application/json",
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
+    }
+}
+
+
+export const getUserById = async () => {
+    try {
+        config.headers.Authorization = addToken();
+        const id = localStorage.getItem('User');
+        const req = await axios.get(USERS + '/' + id, config);
+        return req;
+    } catch (err) {
+        console.log(err);
     }
 }
 
