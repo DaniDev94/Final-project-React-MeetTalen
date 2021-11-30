@@ -71,7 +71,7 @@ const FormJobOffers = () => {
         <h2 className="c-title" >Descripción de la oferta</h2>
 
       </div>
-      <form className='b-form' onSubmit={handleSubmit(submit)}>
+      <form className='b-format' onSubmit={handleSubmit(submit)}>
         <ThemeProvider theme={theme}>
           <Box component="form" sx={{
             '& .MuiTextField-root': { m: 1, width: '18rem' },
@@ -79,28 +79,28 @@ const FormJobOffers = () => {
           }}
             noValidate
             autoComplete="on">
-            <div className='b-form__content'>
+            <div className='b-format__content'>
               <label htmlFor='oferta'>Oferta</label>
               <TextField
                 required
                 id="outlined-required"
                 name='oferta'{...register('jobInformation.jobTitle')} />
             </div>
-            <div className='b-form__content'>
+            <div className='b-format__content'>
               <label htmlFor='languages'>Idiomas</label>
               <TextField
                 required
                 id="outlined-required"
                 name='languages'{...register('jobInformation.languages')} />
             </div>
-            <div className='b-form__content'>
+            <div className='b-format__content'>
               <label htmlFor='city'>Ciudad</label>
               <TextField
                 required
                 id="outlined-required"
                 name='city'{...register('jobInformation.city')} />
             </div>
-            <div className='b-form__content'>
+            <div className='b-format__content'>
               <label htmlFor='vacancyNumbers'>Vacantes</label>
               <TextField
                 required
@@ -146,35 +146,35 @@ const FormJobOffers = () => {
               </Select>
             </FormControl>
             </div>
-            <div className='b-form__content'>
+            <div className='b-format__content'>
               <label htmlFor='jobDescription'>Condiciones</label>
               <TextField
                 required
                 id="outlined-required"
                 name='jobDescription'{...register('jobInformation.jobDescription')} />
             </div>
-            <div className='b-form__content'>
+            <div className='b-format__content'>
               <label htmlFor='vacancyNumbers'>Vacantes</label>
               <TextField
                 required
                 id="outlined-required"
                 name='vacancyNumbers'{...register('jobInformation.vacancyNumbers')} />
             </div>
-            <div className='b-form__content'>
+            <div className='b-format__content'>
               <label htmlFor='terms.salary'>Salario</label>
               <TextField
                 required
                 id="outlined-required"
                 name='terms.salary'{...register('jobInformation.terms.salary')} />
             </div>
-            <div className='b-form__content'>
+            <div className='b-format__content'>
               <label htmlFor='terms.workingHours'>Horas</label>
               <TextField
                 required
                 id="outlined-required"
                 name='terms.workingHours'{...register('jobInformation.terms.workingHours')} />
             </div>
-            <div className='b-form__content'>
+            <div className='b-format__content'>
               <label htmlFor='terms.contract'>Horas</label>
               <TextField
                 required
