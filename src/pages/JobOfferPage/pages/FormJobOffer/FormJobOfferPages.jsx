@@ -13,7 +13,8 @@ import { useNavigate } from "react-router";
 import { ChevronLeftIcon } from '@chakra-ui/icons';
 import ButtonDark from "../../../../components/ButtonDark/ButtonDark";
 import { ThemeProvider } from '@mui/private-theming';
-import { createTheme, IconButton, InputAdornment, OutlinedInput} from '@mui/material';
+import { createTheme, IconButton, InputAdornment, OutlinedInput } from '@mui/material';
+import { Form } from 'react-bootstrap'
 
 import { Box } from '@mui/material';
 
@@ -49,147 +50,113 @@ const FormJobOffers = () => {
       console.error(error);
     }
   };
-  const theme = createTheme({
-    breakpoints: {
-      values: {
-        mobile: 576,
-        desktop: 778,
-      },
-    },
-  });
+  
 
   return (
     <>
       <Helmet>
 
-        <style>{'body { background-color: #eaeaeb }'}</style>
+        <style>{'body { background-color: rgb (248, 250, 251) }'}</style>
 
       </Helmet>
-      <div className="f-back">
 
-        <ChevronLeftIcon className="f-back" onClick={() => { navigate('/joboffer') }}></ChevronLeftIcon>
-        
-        <h2 className="f-title" >Descripción de la oferta</h2>
+      <div className="b-title-offer">
+        <div className="b-iconcontainer">
+          <ChevronLeftIcon sx={{ fontSize: '1.6rem' }} className="f-back" onClick={() => { navigate('/joboffer') }}></ChevronLeftIcon>
+        </div>
 
+
+        <div>
+          <h2 className="b-title-job" >Descripción de la oferta</h2>
+        </div>
       </div>
-      <form className='f-format' onSubmit={handleSubmit(submit)}>
-        <ThemeProvider theme={theme}>
-          <Box component="form" sx={{
-            '& .MuiTextField-root': { m: 1, width: '18rem' },
-            '& .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input': {  borderRadius: '0.5rem', fontFamily: '"Montserrat", sans-serif', height: '0.7rem' }
-          }}
-            noValidate
-            autoComplete="on">
-            <div className='f-format__content'>
-              <label htmlFor='oferta'>Oferta</label>
-              <TextField
-                required
-                id="outlined-required"
-                name='oferta'{...register('jobInformation.jobTitle')} />
-            </div>
-            <div className='f-format__content'>
-              <label htmlFor='languages'>Idiomas</label>
-              <TextField
-                required
-                id="outlined-required"
-                name='languages'{...register('jobInformation.languages')} />
-            </div>
-            <div className='f-format__content'>
-              <label htmlFor='city'>Ciudad</label>
-              <TextField
-                required
-                id="outlined-required"
-                name='city'{...register('jobInformation.city')} />
-            </div>
-            <div className='f-format__content'>
-              <label htmlFor='vacancyNumbers'>Vacantes</label>
-              <TextField
-                required
-                id="outlined-required"
-                name='vacancyNumbers'{...register('jobInformation.vacancyNumbers')} />
-            </div>
-            <div className="FormLabel">
-            <FormControl sx={{ m: 1.5, minWidth: 220 }}>
-            <label className="labin" htmlFor='sector'>Sector</label>
-              <Select
-                className="f-Text"
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                  
 
-                name="jobInformation.sector"
-                {...register("jobInformation.sector")}
+      <div className="c-container-form-job">
+        <form onSubmit={handleSubmit(submit)}>
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Título</Form.Label>
+              <Form.Control type="text" className="b-input-job" placeholder="Enter title" name='ofert'{...register('jobInformation.jobTitle')} />
+            </Form.Group>
+          </div>
 
-              >
-                <MenuItem value="Diseño Ux/Ui" >Diseño Ux/Ui</MenuItem>
-                <MenuItem value="Desarrollo Web">Desarrollo Web</MenuItem>
-                <MenuItem value="Ciberseguridad">Ciberseguridad</MenuItem>
-              </Select>
-            </FormControl>
-            <label className="labin" htmlFor='sector'>Estudios</label>
-            <FormControl sx={{ m: 1.5, minWidth: 220 }}>
-              
-              <Select
-                className="f-Text"
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-               
 
-                name="jobInformation.training"
-                {...register("jobInformation.training")}
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Idioma</Form.Label>
+              <Form.Control type="text" className="b-input-job" placeholder="Idioma" name='languages'{...register('jobInformation.languages')} />
+            </Form.Group>
+          </div>
 
-              >
-                <MenuItem value="Grado Medio" >Grado Medio</MenuItem>
-                <MenuItem value="Grado Superior">Grado Superior</MenuItem>
-                <MenuItem value="Master">Master</MenuItem>
-                <MenuItem value="Licenciatura">Licenciatura</MenuItem>
-                <MenuItem value="Sin formación">Sin formación</MenuItem>
-              </Select>
-            </FormControl>
-            </div>
-            <div className='f-format__content'>
-              <label htmlFor='jobDescription'>Condiciones</label>
-              <TextField
-                required
-                id="outlined-required"
-                name='jobDescription'{...register('jobInformation.jobDescription')} />
-            </div>
-            <div className='f-format__content'>
-              <label htmlFor='vacancyNumbers'>Vacantes</label>
-              <TextField
-                required
-                id="outlined-required"
-                name='vacancyNumbers'{...register('jobInformation.vacancyNumbers')} />
-            </div>
-            <div className='f-format__content'>
-              <label htmlFor='terms.salary'>Salario</label>
-              <TextField
-                required
-                id="outlined-required"
-                name='terms.salary'{...register('jobInformation.terms.salary')} />
-            </div>
-            <div className='f-format__content'>
-              <label htmlFor='terms.workingHours'>Horas</label>
-              <TextField
-                required
-                id="outlined-required"
-                name='terms.workingHours'{...register('jobInformation.terms.workingHours')} />
-            </div>
-            <div className='f-format__content'>
-              <label htmlFor='terms.contract'>Horas</label>
-              <TextField
-                required
-                id="outlined-required"
-                name='terms.contract'{...register('jobInformation.terms.contract')} />
-            </div>
-            <div>
-              <button className="c-black" style={{ backgroundColor: 'transparent', border: 'none' }} type="submit" value="Continuar"> <ButtonDark></ButtonDark></button>
-            </div>
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Ciudad</Form.Label>
+              <Form.Control type="text" className="b-input-job" placeholder="Ciudad" name='city'{...register('jobInformation.city')} />
+            </Form.Group>
+          </div>
 
-          </Box>
-        </ThemeProvider>
-      </form>
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Vacantes</Form.Label>
+              <Form.Control type="number" className="b-input-job" placeholder="Vacantes" name='vacancyNumbers'{...register('jobInformation.vacancyNumbers')} />
+            </Form.Group>
+          </div>
 
+
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Sector</Form.Label>
+              <Form.Select className="b-job-drop" name="jobInformation.sector"
+                {...register("jobInformation.sector")}>
+                <option className="b-job-drop">Diseño Ux/Ui</option>
+                <option className="b-job-drop">Desarrollo Web</option>
+                <option className="b-job-drop">Ciberseguridad</option>
+              </Form.Select>
+            </Form.Group>
+          </div>
+
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Estudios</Form.Label>
+              <Form.Select className="b-job-drop" name="jobInformation.training"
+                {...register("jobInformation.training")}>
+                <option className="b-job-drop">Master</option>
+                <option className="b-job-drop">Licenciatura</option>
+                <option className="b-job-drop">Grado Superior</option>
+                <option className="b-job-drop">Grado Medio</option>
+                <option className="b-job-drop">Sin formación</option>
+              </Form.Select>
+            </Form.Group>
+          </div>
+
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Salario</Form.Label>
+              <Form.Control type="number" className="b-input-job" placeholder="Salario" name='terms.salary'{...register('jobInformation.terms.salary')} />
+            </Form.Group>
+          </div>
+
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Horas</Form.Label>
+              <Form.Control type="number" className="b-input-job" placeholder="Horas" name='terms.workingHours'{...register('jobInformation.terms.workingHours')} />
+            </Form.Group>
+          </div>
+
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Terminos</Form.Label>
+              <Form.Control type="text" className="b-input-job" placeholder="Conciones" name='terms.contract'{...register('jobInformation.terms.contract')} />
+            </Form.Group>
+          </div>
+
+          <div className='b-button-submit-job'>
+            <button style={{ backgroundColor: 'transparent', border: 'none' }} type='submit'><ButtonDark></ButtonDark></button>
+          </div>
+        
+
+        </form>
+      </div>
 
     </>
   );
