@@ -1,4 +1,4 @@
-.c-form{
+.f-form{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,16 +6,16 @@
     flex-direction: column;
 
 }
-.c-title{
+.f-title{
     font-family : Montserrat;
     font-weight: 300;
     color: #2b81a8
 }
-.c-conditions{
+.f-conditions{
     color : blue;
     font-family : Montserrat;
 }
-.c-row{
+.f-row{
     padding: 0.8em;
     border-radius: 20%;
     
@@ -25,7 +25,7 @@
     width: '18rem';
     
 }
-.c-input{
+.f-input{
     border-radius: 4px;
     width: 15em;
     height: 2em;
@@ -35,7 +35,7 @@
     }
 }
 
-.c-back{
+.f-back{
     display: flex;
     align-content: space-around;
     justify-content: center;
@@ -45,11 +45,11 @@
 }
 
 
-.c-black{
+.f-black{
     margin-top: 1.78em;
 }
 
-.b-format {
+.f-format {
     margin-top: 1.5rem;
     display: flex;
     justify-content: center;
@@ -71,7 +71,7 @@
         }
     }
 }
-.c-Text{
+.f-Text{
     display: flex;
     flex-direction: column;
     color:#2b81a8;
