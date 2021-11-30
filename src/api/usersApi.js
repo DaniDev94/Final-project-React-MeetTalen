@@ -1,5 +1,6 @@
 import axios from "axios";
 import { USERS, LOGIN } from './apiRoutes';
+import { addToken } from "../utils/jwt";
 
 
 const config = {
@@ -11,10 +12,12 @@ const config = {
 }
 
 
-export const getUserById = async (id) => {
+export const getUserById = async () => {
     try {
-        const reqInDb = await axios.post(USERS + '/' + id, config);
-        return reqInDb;
+        config.headers.Authorization = addToken();
+        const id = localStorage.getItem('User');
+        const req = await axios.get(USERS + '/' + id, config);
+        return req;
     } catch (err) {
         console.log(err);
     }
