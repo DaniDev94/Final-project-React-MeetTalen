@@ -76,7 +76,7 @@ const FormJobOffers = () => {
           <div className="b-form-container-min">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label htmlFor='ofert' className="b-jobtitle">Título</Form.Label>
-              <Form.Control type="text" className="b-input-job" placeholder="Enter title" name='ofert'{...register('jobInformation.jobTitle')} />
+              <Form.Control type="text" className="b-input-job" placeholder="Oferta" name='ofert'{...register('jobInformation.jobTitle')} />
             </Form.Group>
           </div>
 
