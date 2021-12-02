@@ -5,14 +5,13 @@ import 'primeicons/primeicons.css'
 import { Routes, Route } from "react-router-dom";
 import HomeCarouselPage from "./pages/HomeCarouselPage/HomeCarouselPage";
 import Loadingpage from "./pages/LoadingPage/Loadingpage";
-import LoginPage from "./pages/UserPages/pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/UserPages/pages/RegisterPage/RegisterPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import CandidatePage from "./pages/CandidatePage/CandidatePage";
 import JobOffersPage from "./pages/JobOfferPage/JobOfferPage";
 import FormJobOffers from "./pages/JobOfferPage/pages/FormJobOffer/FormJobOfferPages";
 import DetailsJobOffer from "./pages/JobOfferPage/pages/DetailsJobOffer/DetailsJobOffer";
-import DetailsCandidate from "./pages/CandidatePage/CandidateDetailPage";
+import DetailsCandidate from "./pages/CandidatePage/CandidateDetailPage/CandidateDetailPage";
 
 
 function App() {
