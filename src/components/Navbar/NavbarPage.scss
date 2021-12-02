@@ -7,8 +7,12 @@
     height: 92px;
     width: 100%;
     border: black 10px;
-    border-radius: 14px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
     background-color: rgb( 255, 255, 255);
+    @media (min-width: 778px) {
+        margin-top: 2.5rem;
+    }
 }
 .c-containerLink{
     display: flex;
