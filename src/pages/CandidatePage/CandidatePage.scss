@@ -1,0 +1,57 @@
+.c-pageTitle{
+    color: rgb( 13, 32, 42);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(248, 250, 251);
+}
+.c-mainContainer{
+    background-color: rgb( 13, 32, 42);
+    height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 2;
+}
+
+.c-cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    width: 168px;
+    max-width: 168px;
+}
+
+.c-imgCandidate{
+    height: 300px;
+    max-height: 250px;
+    width: 300px;
+    max-width: 250px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.c-containerText{
+    background-color: rgb( 248, 250, 251);
+}
+
+.c-nameText{
+    color: rgb( 11, 79, 110);
+    text-align: center;
+}
+
+.c-professionText{
+    color: rgb( 0, 179, 205);
+    text-align: center;
+}
+
+.c-containerFooterCard{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.c-textCard{
+    color: rgb( 217, 217,219);
+}

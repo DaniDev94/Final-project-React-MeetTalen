@@ -1,4 +1,4 @@
-import { CANDIDATE } from './apiRoutes';
+import { CANDIDATE , CANDIDATE_ID, CANDIDATE_NAME} from './apiRoutes';
 import axios from "axios";
 import { addToken } from "../utils/jwt";
 
@@ -24,6 +24,30 @@ export const getCandidates = async () => {
     }
 }
 
+export const getCandidateByName = async (name) => {
+    try { 
+        
+   
+        const req = await axios.get(CANDIDATE + "/" + name , config)
+    
+        return req;
+        
+    } catch (error) {
+        console.error(error)
+    }
+} 
+export const postCandidates = async (candidate) => {
+    try {
+        const data = localStorage.getItem('User');
+        /* const addKeyToUser = { user: data }; */
+        candidate.user=data
+        const req = await axios.post(CANDIDATE_ID, candidate, config);
+        return req;
+    } catch (error) {
+        console.error(error)
+    }
+}
+
 export const deleteCandidate = (candidate) => {
     try {
         const req = axios.delete(CANDIDATE, candidate);
@@ -31,5 +55,3 @@ export const deleteCandidate = (candidate) => {
         console.log(error);
     }
 }
-
-

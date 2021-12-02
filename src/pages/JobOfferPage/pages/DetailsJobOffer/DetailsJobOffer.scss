@@ -1,0 +1,27 @@
+
+ 
+.d-details{
+background-color: blanchedalmond;
+flex-wrap: wrap;
+margin-top: 3em;
+padding: 3em;
+color: #0b4f6e;
+font-family : Montserrat, sans-serif;
+border-radius: 50px;
+@media (min-width: 995px) {
+    margin-right: 25em ; 
+    margin-left: 25em;
+}
+}
+
+.d-inf{
+    margin: 1.5em;
+    margin-bottom: 1em;
+}
+.d-info{
+    text-align: center;
+}
+.d-infor{
+    text-align: center;
+    color : whitesmoke
+}
