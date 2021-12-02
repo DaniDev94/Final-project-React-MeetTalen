@@ -17,6 +17,7 @@ margin-bottom: 150px;
     justify-content: center;
     align-items: center;
     color: white;
+    margin-top: 18px;
     @media (min-width: 778px) {
         margin-left: 35px;
         :hover{
@@ -28,10 +29,13 @@ margin-bottom: 150px;
 
 .b-head-container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     @media (min-width: 778px) {
         display: flex;
         justify-content: center;
+        align-items: center;
+        margin-left: 355px;
     }
 }
 .d-inf{
