@@ -59,14 +59,16 @@ const DetailsCandidate = () => {
                 sx={{ width: 194, height: 191 }}
             />
             <div className="c-cardDetailContainer">
-
-                <h2 className="c-detailCandidateName">{details && details.name.first} {details && details.name.last}</h2>
-                <h2 className="c-detailCandidateProfession">{details && details.profession}</h2>
-                <div className="c-containerIcons">
-                    <p><BsTwitter className="c-containerIcons--icon" /></p>
-                    <p><BsInstagram className="c-containerIcons--icon" /></p>
-                    <p><FaFacebookF className="c-containerIcons--icon" /></p>
+                <div>
+                    <h2 className="c-detailCandidateName">{details && details.name.first} {details && details.name.last}</h2>
+                    <h2 className="c-detailCandidateProfession">{details && details.profession}</h2>
+                    <div className="c-containerIcons">
+                        <p><BsTwitter className="c-containerIcons--icon" /></p>
+                        <p><BsInstagram className="c-containerIcons--icon" /></p>
+                        <p><FaFacebookF className="c-containerIcons--icon" /></p>
+                    </div>
                 </div>
+
 
                 <div className="c-containerPersonalData">
                     <h3 className="c-containerPersonalData--title">Datos personales</h3>
@@ -79,7 +81,7 @@ const DetailsCandidate = () => {
                     <h3 className="c-containerKey--title">Palabras claves del perfil</h3>
                     <div className="c-containerKey--containerText">
                         <p className="c-containerKey--text">UX/UI</p>
-                        <p className="c-containerKey--text2">Creatividad</p>
+                        <p className="c-containerKey--text2">Estilo</p>
                         <p className="c-containerKey--text">HTML</p>
                         <p className="c-containerKey--text2">Empatía</p>
                         <p className="c-containerKey--text">Proyectos</p>
