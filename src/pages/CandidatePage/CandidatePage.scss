@@ -5,6 +5,7 @@
     align-items: center;
     background-color: rgb(248, 250, 251);
     height: 67px;
+    font-family: "Montserrat", sans-serif;
 }
 
 .c-list{
@@ -13,6 +14,13 @@
     justify-content: space-around;
     text-align: center;
     padding: 15px;
+    @media (min-width: 778px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+        gap: 10px;
+    }
 }
 
 .c-mainContainer{
@@ -21,14 +29,29 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    z-index: 2;
+    font-family: "Montserrat", sans-serif;
+    @media (min-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-top-right-radius: 2rem;
+        border-top-left-radius: 2rem;
+    }
 }
+
 
 .c-cardContainer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 50px;
+    @media (min-width: 778px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .c-cardBodyContainer{
