@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { getCandidateByName } from "../../api/candidateApi"
+import { getCandidateByName } from "../../../api/candidateApi"
 import { useParams } from "react-router-dom";
-import Navbar from "../../components/Navbar/NavbarPage";
+import Navbar from "../../../components/Navbar/NavbarPage";
 import { Card } from 'react-bootstrap';
 import { Helmet } from "react-helmet";
 import { Avatar } from "@mui/material";

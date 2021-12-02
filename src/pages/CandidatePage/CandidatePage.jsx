@@ -46,23 +46,32 @@ const CandidatePage = () => {
                 <h1 className="c-pageTitle" >Candidatos</h1>
             </div>
 
+            <div className="c-list">
+                                <p>Filtros</p>
+                                <p>Ubicación</p>
+                                <p>Disponibilidad</p>
+                            </div>
+
             <div className="c-mainContainer">
                 {candidate.map(item => {
                     return (
                         <div>
+                            
                             <div key={JSON.stringify(item)}>
                                 <div>
                                     <Helmet>
                                         <style>{'body { background-color: rgb( 13, 32, 42) }'}</style>
                                     </Helmet>
+
                                     <div className="c-cardContainer">
-                                    <Link className="c-linkcandidate" to={{ pathname: "/candidates/" + item.name.first }}>
-                                        <Card>
-                                            <Avatar
-                                                alt="Remy Sharp"
-                                                src={item.image}
-                                                sx={{ width: 150, height: 150 }}
-                                            />
+                                        <Avatar
+                                            className="c-imgContainer"
+                                            alt="Remy Sharp"
+                                            src={item.image}
+                                            sx={{ width: 150, height: 150 }}
+                                        />
+                                        <Link className="c-linkcandidate" to={{ pathname: "/candidates/" + item.name.first }}>
+                                        <Card className="c-cardBodyContainer">
                                             <div className="c-containerText">
                                                 <Card.Body>
                                                     <Card.Title className="c-nameText">{item.name.first}</Card.Title>
@@ -71,7 +80,7 @@ const CandidatePage = () => {
                                                     </Card.Text>
                                                 </Card.Body>
                                                 <div className="c-containerFooterCard">
-                                                    <Card.Text className="c-textCard">{item.information.age}</Card.Text>
+                                                    <Card.Text className="c-textCard">{item.information.age} años</Card.Text>
                                                     <Card.Text className="c-textCard"><BiMap /> {item.information.address.locality}  </Card.Text>
                                                 </div>
                                             </div>
@@ -92,5 +101,3 @@ const CandidatePage = () => {
 
 
 export default CandidatePage;
-
-
