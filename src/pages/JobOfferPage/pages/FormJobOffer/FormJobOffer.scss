@@ -16,6 +16,9 @@
     align-items: center;
     @media (min-width: 778px) {
         margin-right: 5rem;
+        :hover{
+            color:rgb(0, 179, 205);
+        }
     }
 }
 
@@ -32,6 +35,9 @@
     flex-direction: column;
     margin-top: 30px;
     margin: 0 1rem 0 1rem;
+    @media (min-width: 768px){
+        margin-bottom: 50px;
+    }
 }
 .b-form-container-min{
     margin-bottom: 1.5rem;
