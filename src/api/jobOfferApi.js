@@ -3,6 +3,7 @@ import { JOBOFFER, CREATE_JOBOFFER } from './apiRoutes';
 import { addToken } from "../utils/jwt";
 
 
+
 const accessToken = addToken();
 
 
@@ -33,9 +34,19 @@ export const getJobOffers = async () => {
     }
 }
 
-
+export const getJobOfferById = async (idOffer) => {
+try { 
+    const req = await axios.get(JOBOFFER + "/" + idOffer, config)
+    return req;
+} catch (error) {
+    console.error(error)
+}
+}
 export const postJobOffers = async (jobOffer) => {
     try {
+        const data = localStorage.getItem('User');
+        /* const addKeyToUser = { user: data }; */
+        jobOffer.user=data
         const req = await axios.post(CREATE_JOBOFFER, jobOffer, config);
         console.log(req)
         return req;
@@ -43,3 +54,5 @@ export const postJobOffers = async (jobOffer) => {
         console.error(error)
     }
 }
+
+

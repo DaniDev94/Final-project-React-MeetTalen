@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { deleteCandidate, getCandidates } from '../../api/candidateApi';
 import Navbar from '../../components/Navbar/NavbarPage';
+import { Link } from "react-router-dom";
+import { Card, Image } from 'react-bootstrap';
+import { BiMap } from 'react-icons/bi';
+import { Helmet } from "react-helmet";
+import { Avatar } from "@mui/material";
+import './CandidatePage.scss'
+
+
 
 const CandidatePage = () => {
 
@@ -34,30 +42,55 @@ const CandidatePage = () => {
 
     return (
         <>
-            <h1>Candidatos</h1>
-            <div>
+            <div >
+                <h1 className="c-pageTitle" >Candidatos</h1>
+            </div>
+
+            <div className="c-mainContainer">
                 {candidate.map(item => {
                     return (
-                        <div key={JSON.stringify(item)}>
-                            <img src={item.image} />
-                            <div>
-                                <p>{item.name.first}</p>
-                                <p>{item.profession}</p>
-                            </div>
-                            <div>
-                                <p>{item.information.age}</p>
-                                <p>{item.information.address.locality}</p>
+                        <div>
+                            <div key={JSON.stringify(item)}>
+                                <div>
+                                    <Helmet>
+                                        <style>{'body { background-color: rgb( 13, 32, 42) }'}</style>
+                                    </Helmet>
+                                    <div className="c-cardContainer">
+                                    <Link className="c-linkcandidate" to={{ pathname: "/candidates/" + item.name.first }}>
+                                        <Card>
+                                            <Avatar
+                                                alt="Remy Sharp"
+                                                src={item.image}
+                                                sx={{ width: 150, height: 150 }}
+                                            />
+                                            <div className="c-containerText">
+                                                <Card.Body>
+                                                    <Card.Title className="c-nameText">{item.name.first}</Card.Title>
+                                                    <Card.Text className="c-professionText">
+                                                        {item.profession}
+                                                    </Card.Text>
+                                                </Card.Body>
+                                                <div className="c-containerFooterCard">
+                                                    <Card.Text className="c-textCard">{item.information.age}</Card.Text>
+                                                    <Card.Text className="c-textCard"><BiMap /> {item.information.address.locality}  </Card.Text>
+                                                </div>
+                                            </div>
+                                        </Card>
+                                        </Link>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     )
                 })}
+
             </div>
             <Navbar></Navbar>
         </>
     )
 }
 
-export default CandidatePage;
 
+export default CandidatePage;
 
 
