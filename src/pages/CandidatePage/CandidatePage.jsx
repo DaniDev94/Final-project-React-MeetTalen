@@ -42,14 +42,14 @@ const CandidatePage = () => {
 
     return (
         <>
-            <div >
+            <div>
                 <h1 className="c-pageTitle" >Candidatos</h1>
             </div>
 
             <div className="c-list">
-                                <p>Filtros</p>
-                                <p>Ubicación</p>
-                                <p>Disponibilidad</p>
+                                <p className="c-list--p">Filtros</p>
+                                <p className="c-list--p">Ubicación</p>
+                                <p className="c-list--p">Disponibilidad</p>
                             </div>
 
             <div className="c-mainContainer">

@@ -9,7 +9,7 @@
     font-size: 20px;
     letter-spacing: -0.27px;
     color:rgb(255, 255, 255);
- 
+    font-family: "Montserrat", sans-serif;
 }
 
 .c-imgDetailCandidate{
@@ -24,16 +24,24 @@
     justify-content: center;
     text-align: center;
     margin-bottom: 150px;
+    font-family: "Montserrat", sans-serif;
     @media (min-width: 778px) {
-        background-color: rebeccapurple;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
+
 
 .c-detailCandidateName{
     font-size: 34px;
     letter-spacing: 0.45px;
     color: rgb(13, 32, 42);
     padding-top: 15px;
+    @media (min-width: 778px) {
+       margin-top: 15px;
+    }
 }
 
 .c-detailCandidateProfession{
@@ -41,6 +49,9 @@
     letter-spacing: 0.22px;
     color: rgb(13, 32, 42);
     margin-top: 15px;
+    @media (min-width: 778px) {
+        margin-top: 25px;
+     }
 }
 
 .c-containerIcons{
@@ -48,6 +59,11 @@
     justify-content: center;
     margin-top: 30px;
     margin-bottom: 30px;
+    @media (min-width: 778px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .c-containerIcons--icon{
@@ -61,18 +77,28 @@
     width: 100%;
     text-align: start;
     padding-left: 20px;
+    font-family: "Montserrat", sans-serif;
+    @media (min-width: 778px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
 }
 
 .c-containerPersonalData--title{
     color:rgb(11, 79, 110);
     font-size: 22px;
     margin-bottom: 15px;
+    font-family: "Montserrat", sans-serif;
 }
 
 .c-containerPersonalData--text{
     color:rgb(109, 114, 120);
     font-size: 18px;
     letter-spacing: -0.24px;
+    font-family: "Montserrat", sans-serif;
 }
 
 .c-containerPersonalData--icon{
@@ -80,6 +106,7 @@
     height: 30px;
     color:rgb(0, 179, 205);
     margin-right: 15px;
+    font-family: "Montserrat", sans-serif;
 }
 
 .c-containerKey{
@@ -89,12 +116,21 @@
     text-align: start;
     padding-left: 20px;
     margin-top: 35px;
+    font-family: "Montserrat", sans-serif;
+    @media (min-width: 778px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
 }
 
 .c-containerKey--title{
     color:rgb(11, 79, 110);
     font-size: 22px;
     margin-bottom: 15px;
+    font-family: "Montserrat", sans-serif;
 }
 
 .c-containerKey--containerText{
@@ -114,7 +150,11 @@
     padding: 0 15px;
     border-radius: 8px;
     height: 39px;
+    font-family: "Montserrat", sans-serif;
     width: 93px;
+    @media (min-width: 768px) {
+        margin-left: 10px;
+    }
 }
 
 .c-containerKey--text2{
@@ -125,7 +165,11 @@
     padding: 0 15px;
     border-radius: 8px;
     height: 39px;
+    font-family: "Montserrat", sans-serif;
     width: 93px;
+    @media (min-width: 768px) {
+        margin-left: 10px;
+    }
 }
 
 .c-containerFormation{
@@ -135,12 +179,21 @@
     text-align: start;
     padding-left: 20px;
     margin-top: 35px;
+    font-family: "Montserrat", sans-serif;
+    @media (min-width: 778px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
 }
 
 .c-containerFormation--title{
     color:rgb(11, 79, 110);
     font-size: 22px;
     margin-bottom: 15px;
+    font-family: "Montserrat", sans-serif;
 }
 
 .c-containerFormation--containerText{
@@ -153,13 +206,15 @@
     line-height: 27px;
     letter-spacing: -0.24px;
     color:rgb(0, 179, 205);
+    font-family: "Montserrat", sans-serif;
 }
 
 .c-containerFormation--text2{
     font-size: 18px;
     line-height: 27px;
     letter-spacing: -0.24px;
+    font-family: "Montserrat", sans-serif;
     padding-left: 15px;
     color: rgb(109, 114, 120);
-   
+    
 }
