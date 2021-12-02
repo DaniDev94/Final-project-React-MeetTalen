@@ -12,7 +12,7 @@ import CandidatePage from "./pages/CandidatePage/CandidatePage";
 import JobOffersPage from "./pages/JobOfferPage/JobOfferPage";
 import FormJobOffers from "./pages/JobOfferPage/pages/FormJobOffer/FormJobOfferPages";
 import DetailsJobOffer from "./pages/JobOfferPage/pages/DetailsJobOffer/DetailsJobOffer";
-import DetailsCandidate from "./pages/CandidatePage/CandidateDetailPage/CandidateDetailPage";
+import DetailsCandidate from "./pages/CandidatePage/CandidateDetailPage";
 
 
 function App() {

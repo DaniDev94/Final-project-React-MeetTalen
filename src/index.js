@@ -15,4 +15,8 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
+<<<<<<< HEAD
 
+=======
+reportWebVitals();
+>>>>>>> testing
