@@ -10,10 +10,6 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useNavigate } from "react-router";
-<<<<<<< HEAD
-import { ChevronLeftIcon } from '@chakra-ui/icons'
-import ButtonDark from "../../../../components/ButtonDark/ButtonDark"
-=======
 import { ChevronLeftIcon } from '@chakra-ui/icons';
 import ButtonDark from "../../../../components/ButtonDark/ButtonDark";
 import { ThemeProvider } from '@mui/private-theming';
@@ -21,7 +17,6 @@ import { createTheme, IconButton, InputAdornment, OutlinedInput } from '@mui/mat
 import { Form } from 'react-bootstrap'
 
 import { Box } from '@mui/material';
->>>>>>> testing
 
 
 const FormJobOffers = () => {
@@ -59,51 +54,6 @@ const FormJobOffers = () => {
 
   return (
     <>
-<<<<<<< HEAD
-      <form onSubmit={handleSubmit(submit)}>
-        <h2>Descripción</h2>
-
-        <label htmlFor="jobTitle">Oferta:</label>
-        <input type="text" name="jobTitle" {...register("jobTitle")} />
-
-        <label htmlFor="languages">Número de vacantes:</label>
-        <input type="text" name="languages" {...register("languages")} />
-
-        <label htmlFor="vacancyNumbers">idiomas:</label>
-        <input
-          type="text"
-          name="jobvacancyNumbersTitle"
-          {...register("vacancyNumbers")}
-        />
-
-        <label htmlFor="sector">Sector:</label>
-        <input type="text" name="sector" {...register("sector")} />
-
-        <select>
-          <option>Diseño Ux/Ui </option>
-          <option>Desarrollo Web</option>
-          <option>Ciberseguridad</option>
-        </select>
-
-        <label htmlFor="training">Estudios:</label>
-        <input type="text" name="training" {...register("training")} />
-
-        <label htmlFor="jobDescription">Condiciones laborales:</label>
-        <input
-          type="text"
-          name="jobDescription"
-          {...register("jobDescription")}
-        />
-
-        <label htmlFor="salary">Salario:</label>
-        <input type="text" name="salary" {...register("salary")} />
-
-        <label htmlFor="workingHours">Horas:</label>
-        <input type="text" name="workingHours" {...register("workingHours")} />
-
-        <label htmlFor="contract">Tipo de contrato:</label>
-        <input type="text" name="contract" {...register("contract")} />
-=======
       <Helmet>
 
         <style>{'body { background-color: rgb (248, 250, 251) }'}</style>
@@ -115,7 +65,6 @@ const FormJobOffers = () => {
           <ChevronLeftIcon sx={{ fontSize: '1.6rem' }} className="f-back" onClick={() => { navigate('/joboffer') }}></ChevronLeftIcon>
         </div>
 
->>>>>>> testing
 
         <div>
           <h2 className="b-title-job" >Descripción de la oferta</h2>
