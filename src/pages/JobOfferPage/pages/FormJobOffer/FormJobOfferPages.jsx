@@ -3,20 +3,11 @@ import { useForm } from "react-hook-form";
 import { postJobOffers } from "../../../../api/jobOfferApi";
 import '../FormJobOffer/FormJobOffer.scss'
 import { Helmet } from "react-helmet";
-import Navbar from "../../../../components/Navbar/NavbarPage";
-import TextField from '@mui/material/TextField';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import { useNavigate } from "react-router";
 import { ChevronLeftIcon } from '@chakra-ui/icons';
 import ButtonDark from "../../../../components/ButtonDark/ButtonDark";
-import { ThemeProvider } from '@mui/private-theming';
-import { createTheme, IconButton, InputAdornment, OutlinedInput } from '@mui/material';
 import { Form } from 'react-bootstrap'
 
-import { Box } from '@mui/material';
 
 
 const FormJobOffers = () => {
