@@ -1,0 +1,45 @@
+.c-containerNavbar{
+    display: flex;
+    justify-content: center;
+    position:fixed;
+    bottom:0;
+    clear:both;
+    height: 92px;
+    width: 100%;
+    border: black 10px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    background-color: rgb( 255, 255, 255);
+    @media (min-width: 778px) {
+        margin-top: 2.5rem;
+    }
+}
+.c-containerLink{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.c-linkNav{
+    text-decoration: none;
+    font-family: 10px;
+    color: rgb(11, 79, 110);
+    padding: 0.5rem;
+}
+
+.c-linkNav:hover{
+    font-weight: bold;
+}
+
+.c-iconNavbar{
+    color: rgb(11, 79, 110);
+    width: 50px;
+    height: 23px;
+    margin: 0px auto;
+}
+
+
+.c-iconNavbar:hover{
+    font-weight: bold;
+}

@@ -47,7 +47,7 @@ const JobOffersPage = () => {
                         </Card.Body>
                         <div className="c-cardHalf">
                           <Card.Text className="c-cardText" ><BiMap />{item.jobInformation.city}</Card.Text>
-                          <p> 02/07/2019</p>
+                          <p> 02/12/2021</p>
                         </div>
                         <div style={{ width: 150 }} className="c-slider">
                           <Slider aria-label="Temperature"

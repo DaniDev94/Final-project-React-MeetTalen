@@ -3,60 +3,70 @@ import Navbar from "../../../../components/Navbar/NavbarPage";
 import { getJobOfferById } from "../../../../api/jobOfferApi"
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import '../DetailsJobOffer/DetailsJobOffer.scss'
+import '../DetailsJobOffer/DetailsJobOffer.scss';
+import { ChevronLeftIcon } from '@chakra-ui/icons';
+import { useNavigate } from "react-router";
 
 
 
 
 
 const DetailsJobOffer = () => {
-   
- 
+
+
     const { id } = useParams();
     const [details, setDetails] = useState();
-   
+    const navigate = useNavigate();
+
     const getJobOfferId = async () => {
         try {
             const data = await getJobOfferById(id);
             const item = data.data;
             setDetails(item);
             console.log(item)
-            
+
         } catch (error) {
             console.log(error);
         }
     };
 
     useEffect(() => {
-        getJobOfferId() ;
-        console.log("estamos en  effect" , details)
-    },[]);
+        getJobOfferId();
+        console.log("estamos en  effect", details)
+    }, []);
 
     return (
         <>
-         <Helmet>
+            <Helmet>
 
-<style>{'body { background-color:#0d202a}'}</style>
+                <style>{'body { background-color:#0d202a}'}</style>
 
-</Helmet>
+            </Helmet>
 
-<h2 className= "d-infor" >Detalles de la oferta</h2>
-        <div className = "d-details">
-        
-        
-       <h3 className= "d-info" >{details && details.jobInformation.jobTitle}</h3>
-       <p className= "d-inf"> <strong>Ciudad : </strong>  {details && details.jobInformation.city}</p>
-       <p className= "d-inf"> <strong>Vacantes : </strong>  {details && details.jobInformation.vacancyNumbers}</p>
-       <p className= "d-inf" > <strong> Idiomas : </strong>  {details && details.jobInformation.languages}</p>
-       <p className= "d-inf"> <strong>Sector : </strong>{details && details.jobInformation.sector}</p>
-       <p className= "d-inf"><strong>Estudios : </strong>{details && details.jobInformation.training}</p>
-       <p className= "d-inf"><strong>Funciones : </strong> {details && details.jobInformation.jobDescription}</p>
-       <p className= "d-inf"><strong>Salario : </strong>{details && details.jobInformation.terms.salary}€</p>
-       <p className= "d-inf"><strong>Jornada : </strong>{details && details.jobInformation.terms.workingHours}</p>
-       <p className= "d-inf"><strong>Contrato : </strong>{details && details.jobInformation.terms.contract}</p>
+            <div className="b-head-container">
+                <div className="b-iconcontainer-detail">
+                    <ChevronLeftIcon sx={{ fontSize: '1.6rem' }} className="f-back" onClick={() => { navigate('/joboffer') }}></ChevronLeftIcon>
+                </div>
+                <h2 className="d-infor" >Detalles de la oferta</h2>
+            </div>
 
-       </div>
-        <Navbar></Navbar>
+
+            <div className="d-details">
+
+
+                <h3 className="d-info" >{details && details.jobInformation.jobTitle}</h3>
+                <p className="d-inf"> <strong>Ciudad : </strong>  {details && details.jobInformation.city}</p>
+                <p className="d-inf"> <strong>Vacantes : </strong>  {details && details.jobInformation.vacancyNumbers}</p>
+                <p className="d-inf" > <strong> Idiomas : </strong>  {details && details.jobInformation.languages}</p>
+                <p className="d-inf"> <strong>Sector : </strong>{details && details.jobInformation.sector}</p>
+                <p className="d-inf"><strong>Estudios : </strong>{details && details.jobInformation.training}</p>
+                <p className="d-inf"><strong>Funciones : </strong> {details && details.jobInformation.jobDescription}</p>
+                <p className="d-inf"><strong>Salario : </strong>{details && details.jobInformation.terms.salary}€</p>
+                <p className="d-inf"><strong>Jornada : </strong>{details && details.jobInformation.terms.workingHours}</p>
+                <p className="d-inf"><strong>Contrato : </strong>{details && details.jobInformation.terms.contract}</p>
+
+            </div>
+            <Navbar></Navbar>
         </>
     )
 }
