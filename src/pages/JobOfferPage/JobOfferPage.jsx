@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getJobOffers } from "../../api/jobOfferApi";
 import Navbar from "../../components/Navbar/NavbarPage";
-import './JobOfferPage.scss'
+import { Card, CardGroup } from 'react-bootstrap';
+import { BiMap } from 'react-icons/bi';
+import { Slider } from "@mui/material";
+import { Helmet } from "react-helmet";
+import './JobOfferPage.scss';
 
 const JobOffersPage = () => {
   const [jobOffers, setJobOffers] = useState([]);
@@ -22,26 +26,54 @@ const JobOffersPage = () => {
 
   return (
     <>
-      <h1>Ofertas de trabajo</h1>
+      <h1 className="c-pageTitle" >Ofertas de trabajo</h1>
 
-      <div>
+      <div className="c-mainContainer">
         {jobOffers.map((item) => {
           console.log(item);
           return (
-            <div className="card">
+            <div>
               <div key={JSON.stringify(item)}>
-                <Link to={{ pathname: "/joboffer/" + item._id }}>
-                  <h2> {item.jobInformation.jobTitle}</h2>
-                  <p> Vacantes: {item.jobInformation.vacancyNumbers}</p>
-                  {/* <p> Idiomas: {item.jobInformation.languages}</p>
-              <p> Sector: {item.jobInformation.sector}</p>
-              <p> Estudios: {item.jobInformation.training}</p>
-              <p> Descripción : {item.jobInformation.jobDescription}</p>
-              <p> Salario : {item.jobInformation.terms.salary}</p>
-              <p> Horas: {item.jobInformation.terms.workingHours}</p>
-              <p> Tipo de contrato: {item.jobInformation.terms.contract}</p>
-              <button>Crear oferta</button> */}
-                </Link>
+                <div className="c-container">
+                  <Helmet>
+                    <style>{'body { background-color: rgb( 13, 32, 42) }'}</style>
+                  </Helmet>
+                  <CardGroup>
+                    <Link className="c-linkJobOffer" to={{ pathname: "/joboffer/" + item._id }}>
+                      <Card border="warning" style={{ width: '16rem' }}>
+                        <Card.Body>
+                          <Card.Title className="c-jobOfferTitle">{item.jobInformation.jobTitle}</Card.Title>
+                          <Card.Text className="c-cardText" >Vacantes: {item.jobInformation.vacancyNumbers}</Card.Text>
+                        </Card.Body>
+                        <div className="c-cardHalf">
+                          <Card.Text className="c-cardText" ><BiMap />{item.jobInformation.city}</Card.Text>
+                          <p> 02/07/2019</p>
+                        </div>
+                        <div style={{ width: 150 }} className="c-slider">
+                          <Slider aria-label="Temperature"
+                            defaultValue={30}
+                            color="secondary" />
+                        </div>
+                        <div className="c-cardFooter">
+                          <div className="c-cardFooter--section">
+                            <p className="c-cardNumber">0</p>
+                            <p>Inscritos</p>
+                          </div>
+                          <div className="c-cardFooter--section">
+                            <p className="c-cardNumber">0</p>
+                            <p>En proceso</p>
+                          </div>
+                          <div className="c-cardFooter--section">
+                            <p className="c-cardNumber">0</p>
+                            <p>Finalistas</p>
+                          </div>
+                        </div>
+                      </Card>
+                    </Link>
+                  </CardGroup>
+                </div>
+
+
               </div>
             </div>
 
@@ -54,3 +86,5 @@ const JobOffersPage = () => {
 };
 
 export default JobOffersPage;
+
+

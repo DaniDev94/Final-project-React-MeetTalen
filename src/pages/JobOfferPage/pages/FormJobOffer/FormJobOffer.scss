@@ -1,0 +1,75 @@
+.b-title-offer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2.5rem;
+    color: rgb (13, 32, 42);
+    font-family: "Montserrat", sans-serif;
+    @media (min-width: 778px) {
+        width: 100%;
+    }
+}
+
+.b-iconcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 778px) {
+        margin-right: 5rem;
+        :hover{
+            color:rgb(0, 179, 205);
+        }
+    }
+}
+
+.b-title-job{
+    @media (min-width: 778px) {
+        margin-right: 3rem;
+    }
+}
+
+.c-container-form-job{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    margin: 0 1rem 0 1rem;
+    @media (min-width: 768px){
+        margin-bottom: 50px;
+    }
+}
+.b-form-container-min{
+    margin-bottom: 1.5rem;
+}
+
+.b-jobtitle{
+    color: rgb(11, 79, 110);
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+}
+
+.b-input-job{
+    width: 0;
+    @media (min-width:778px){
+        width: 200%;
+    }
+}
+
+.b-job-drop{
+    color: rgb(11, 79, 110);
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+}
+
+.b-button-submit-job{
+    margin-top: 1.8rem;
+    @media (min-width: 778px) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+
+

@@ -1,38 +1,38 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { postJobOffers } from "../../../../api/jobOfferApi";
-
-
+import '../FormJobOffer/FormJobOffer.scss'
+import { Helmet } from "react-helmet";
 import Navbar from "../../../../components/Navbar/NavbarPage";
+import TextField from '@mui/material/TextField';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { useNavigate } from "react-router";
+import { ChevronLeftIcon } from '@chakra-ui/icons';
+import ButtonDark from "../../../../components/ButtonDark/ButtonDark";
+import { ThemeProvider } from '@mui/private-theming';
+import { createTheme, IconButton, InputAdornment, OutlinedInput } from '@mui/material';
+import { Form } from 'react-bootstrap'
+
+import { Box } from '@mui/material';
+
 
 const FormJobOffers = () => {
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
 
   const submit = (data) => {
     console.log(data.salary)
-    const terms= {
-      salary : data.salary,
+    const terms = {
+      salary: data.salary,
       workingHours: data.workingHours,
       contract: data.contract
     }
-    /* const token = localStorage.getItem('token')
-    const idUser = token.id.toString()
-    console.log(idUser) */
 
-    /* const formData = new FormData();
-    formData.append("jobTitle", data.jobTitle);
-    formData.append("vacancyNumbers", data.vacancyNumbers);
-    formData.append("languages", data.languages);
-    formData.append("sector", data.sector);
-    formData.append("training", data.training);
-    formData.append("jobDescription", data.jobDescription);
-    formData.append("terms.salary", data.salary);
-    formData.append("terms.workingHours", data.workingHours);
-    //formData.append("user",userId) */
-    //addJoboffer(formData);
-    /* console.log(data.jobInformation) */
-    let job = {} 
-    job.jobInformation= data.jobInformation
+    let job = {}
+    job.jobInformation = data.jobInformation
     /* job.user= User  */
 
     console.log(job)
@@ -44,71 +44,120 @@ const FormJobOffers = () => {
       const newJobOffer = await postJobOffers(jobOffer);
       if (newJobOffer) {
         console.log('Oferta creada')
+        navigate('/joboffer')
       }
     } catch (error) {
       console.error(error);
     }
   };
+  
 
   return (
     <>
-      <form onSubmit={handleSubmit(submit)}>
-        <h2>Descripción</h2>
+      <Helmet>
 
-        <label htmlFor="jobTitle">Oferta:</label>
-        <input type="text" name="jobInformation.jobTitle" {...register("jobInformation.jobTitle")} />
+        <style>{'body { background-color: rgb (248, 250, 251) }'}</style>
 
-        <label htmlFor="languages">Idiomas:</label>
-        <input type="text" name="jobInformation.languages" {...register("jobInformation.languages")} />
+      </Helmet>
 
-        <label htmlFor="vacancyNumbers">Vacantes:</label>
-        <input
-          type="text"
-          name="jobInformation.vacancyNumbers"
-          {...register("jobInformation.vacancyNumbers")}
-        />
+      <div className="b-title-offer">
+        <div className="b-iconcontainer">
+          <ChevronLeftIcon sx={{ fontSize: '1.6rem' }} className="f-back" onClick={() => { navigate('/joboffer') }}></ChevronLeftIcon>
+        </div>
 
-        <label htmlFor="sector">Sector:</label>
-        {/* <input type="text" name="jobInformation.sector" {...register("jobInformation.sector")} /> */}
-
-        <select name="jobInformation.sector" {...register("jobInformation.sector")}>
-          <option value =" Diseño Ux/Ui">Diseño Ux/Ui </option>
-          <option value ="Desarrollo web">Desarrollo Web</option>
-          <option value= "Ciberseguridad">Ciberseguridad</option>
-        </select>
-
-        <label htmlFor="training">Estudios:</label>
-        
-        <select name="jobInformation.training" {...register("jobInformation.training")}>
-          <option value ="Grado Medio">Grado Medio</option>
-          <option value ="Grado Superior">Grado Superior</option>
-          <option value= "Master">Master</option>
-          <option value= "Licenciatura">Licenciatura</option>
-          <option value= "Sin formación">Sin formación</option>
-        </select>
-
-        <label htmlFor="jobDescription">Condiciones laborales:</label>
-        <input
-          type="text"
-          name="jobInformation.jobDescription"
-          {...register("jobInformation.jobDescription")}
-        />
-
-        <label htmlFor="salary">Salario:</label>
-        <input type="number" name="jobInformation.terms.salary" {...register("jobInformation.terms.salary")} />
-
-        <label htmlFor="workingHours">Horas:</label>
-        <input type="number" name="jobInformation.terms.workingHours" {...register("jobInformation.terms.workingHours")} />
-
-        <label htmlFor="contract">Tipo de contrato:</label>
-        <input type="text" name="jobInformation.terms.contract" {...register("jobInformation.terms.contract")} />
 
         <div>
-          <input type="submit" value="Enviar" />
+          <h2 className="b-title-job" >Descripción de la oferta</h2>
         </div>
-      </form>
+      </div>
 
-      <Navbar></Navbar>
+      <div className="c-container-form-job">
+        <form onSubmit={handleSubmit(submit)}>
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Título</Form.Label>
+              <Form.Control type="text" className="b-input-job" placeholder="Oferta" name='ofert'{...register('jobInformation.jobTitle')} />
+            </Form.Group>
+          </div>
+
+
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Idioma</Form.Label>
+              <Form.Control type="text" className="b-input-job" placeholder="Idioma" name='languages'{...register('jobInformation.languages')} />
+            </Form.Group>
+          </div>
+
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Ciudad</Form.Label>
+              <Form.Control type="text" className="b-input-job" placeholder="Ciudad" name='city'{...register('jobInformation.city')} />
+            </Form.Group>
+          </div>
+
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Vacantes</Form.Label>
+              <Form.Control type="number" className="b-input-job" placeholder="Vacantes" name='vacancyNumbers'{...register('jobInformation.vacancyNumbers')} />
+            </Form.Group>
+          </div>
+
+
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Sector</Form.Label>
+              <Form.Select className="b-job-drop" name="jobInformation.sector"
+                {...register("jobInformation.sector")}>
+                <option className="b-job-drop">Diseño Ux/Ui</option>
+                <option className="b-job-drop">Desarrollo Web</option>
+                <option className="b-job-drop">Ciberseguridad</option>
+              </Form.Select>
+            </Form.Group>
+          </div>
+
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Estudios</Form.Label>
+              <Form.Select className="b-job-drop" name="jobInformation.training"
+                {...register("jobInformation.training")}>
+                <option className="b-job-drop">Master</option>
+                <option className="b-job-drop">Licenciatura</option>
+                <option className="b-job-drop">Grado Superior</option>
+                <option className="b-job-drop">Grado Medio</option>
+                <option className="b-job-drop">Sin formación</option>
+              </Form.Select>
+            </Form.Group>
+          </div>
+
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Salario</Form.Label>
+              <Form.Control type="number" className="b-input-job" placeholder="Salario" name='terms.salary'{...register('jobInformation.terms.salary')} />
+            </Form.Group>
+          </div>
+
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Horas</Form.Label>
+              <Form.Control type="number" className="b-input-job" placeholder="Horas" name='terms.workingHours'{...register('jobInformation.terms.workingHours')} />
+            </Form.Group>
+          </div>
+
+          <div className="b-form-container-min">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label htmlFor='ofert' className="b-jobtitle">Terminos</Form.Label>
+              <Form.Control type="text" className="b-input-job" placeholder="Conciones" name='terms.contract'{...register('jobInformation.terms.contract')} />
+            </Form.Group>
+          </div>
+
+          <div className='b-button-submit-job'>
+            <button style={{ backgroundColor: 'transparent', border: 'none' }} type='submit'><ButtonDark></ButtonDark></button>
+          </div>
+        
+
+        </form>
+      </div>
+
     </>
   );
 };
