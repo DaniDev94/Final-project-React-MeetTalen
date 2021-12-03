@@ -44,7 +44,7 @@ const DetailsCandidate = () => {
         <>
 
             <div className="c-pageContainerTitleDetail">
-                <h1 className="c-pageTitleDetail">Details</h1>
+                <h1 className="c-pageTitleDetail">Detalles</h1>
             </div>
 
 

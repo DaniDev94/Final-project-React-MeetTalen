@@ -3,7 +3,7 @@
     justify-content: center;
     text-align: center;
     margin-top: 2.5rem;
-    color: rgb (13, 32, 42);
+    color: rgb(13, 32, 42);
     font-family: "Montserrat", sans-serif;
     @media (min-width: 778px) {
         width: 100%;
@@ -23,8 +23,10 @@
 }
 
 .b-title-job{
+    font-size: 1.2rem;
+    margin: 1rem;
     @media (min-width: 778px) {
-        margin-right: 3rem;
+        margin-right: 2rem;
     }
 }
 
@@ -34,7 +36,7 @@
     align-items: center;
     flex-direction: column;
     margin-top: 30px;
-    margin: 0 1rem 0 1rem;
+    margin: 0 3rem 0 3rem;
     @media (min-width: 768px){
         margin-bottom: 50px;
     }
@@ -63,7 +65,8 @@
 }
 
 .b-button-submit-job{
-    margin-top: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     @media (min-width: 778px) {
         display: flex;
         justify-content: center;

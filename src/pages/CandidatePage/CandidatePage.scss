@@ -1,14 +1,16 @@
-.c-pageTitle{
-    color: rgb( 13, 32, 42);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(248, 250, 251);
-    height: 67px;
-    font-family: "Montserrat", sans-serif;
-}
 
-.c-list{
+.c-pageTitle {
+    color: rgb(13, 32, 42);
+    background-color: rgb(248, 250, 251);
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #0d202a;
+    margin: 0 0 1.8rem 0;
+    height: 6rem;
+}
+.c-list {
     color: rgb(217, 217, 219);
     display: flex;
     justify-content: space-around;
@@ -22,10 +24,9 @@
         gap: 10px;
     }
 }
-
-.c-mainContainer{
-    background-color: rgb( 13, 32, 42);
-    height: 1000px;
+.c-mainContainer {
+    background-color: rgb(13, 32, 42);
+    min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -35,13 +36,14 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-top-right-radius: 2rem;
-        border-top-left-radius: 2rem;
+        // border-top-right-radius: 2rem;
+        // border-top-left-radius: 2rem;
     }
 }
-
-
-.c-cardContainer{
+.c-linkcandidate {
+    text-decoration: none;
+}
+.c-cardContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -53,39 +55,30 @@
         align-items: center;
     }
 }
-
-.c-cardBodyContainer{
+.c-cardBodyContainer {
     height: 130px;
     width: 250px;
     position: absolute;
     margin-bottom: 50px;
 }
-
-.c-imgContainer{
+.c-imgContainer {
     position: relative;
 }
-
-.c-containerText{
-    background-color: rgb( 248, 250, 251);
+.c-containerText {
+    background-color: rgb(248, 250, 251);
 }
-
-
-.c-nameText{
-    color: rgb( 11, 79, 110);
+.c-nameText {
+    color: rgb(11, 79, 110);
     text-align: center;
 }
-
-.c-professionText{
-    color: rgb( 0, 179, 205);
+.c-professionText {
+    color: rgb(0, 179, 205);
     text-align: center;
 }
-
-.c-containerFooterCard{
+.c-containerFooterCard {
     display: flex;
     justify-content: space-around;
-    
 }
-
-.c-textCard{
+.c-textCard {
     color: rgb(157, 157, 158);
 }

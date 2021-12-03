@@ -10,6 +10,7 @@
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
     background-color: rgb( 255, 255, 255);
+    font-family: "Montserrat", sans-serif;
     @media (min-width: 778px) {
         margin-top: 2.5rem;
     }
@@ -29,7 +30,7 @@
 }
 
 .c-linkNav:hover{
-    font-weight: bold;
+    color: #2b81a8;
 }
 
 .c-iconNavbar{
@@ -41,5 +42,5 @@
 
 
 .c-iconNavbar:hover{
-    font-weight: bold;
+    color: #2b81a8;
 }

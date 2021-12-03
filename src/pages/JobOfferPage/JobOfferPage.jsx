@@ -34,7 +34,7 @@ const JobOffersPage = () => {
           return (
             <div>
               <div key={JSON.stringify(item)}>
-                <div className="c-container">
+                <div className="c-container-offert">
                   <Helmet>
                     <style>{'body { background-color: rgb( 13, 32, 42) }'}</style>
                   </Helmet>
